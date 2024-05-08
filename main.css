@@ -7,9 +7,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #DFDFDF;
-  background-color: #FFFFFF;
-  height: 70px ;
+  border-bottom: 1px solid #dfdfdf;
+  background-color: #ffffff;
+  height: 70px;
   padding: 0 200px;
 }
 
@@ -17,8 +17,8 @@ header {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #3692FF;
-  color: #FFFFFF;
+  background-color: #3692ff;
+  color: #ffffff;
   font-weight: 600;
   font-size: 16px;
   line-height: 19.09px;
@@ -29,7 +29,7 @@ header {
 }
 
 .loginBtn:hover {
-  background-color: #1967D6;
+  background-color: #1967d6;
 }
 
 .wrapper {
@@ -40,11 +40,11 @@ header {
 
 .banner {
   height: 540px;
-  background-color: #CFE5FF;
+  background-color: #cfe5ff;
   display: flex;
   align-items: center;
-  background-image: url('./img/home/hero-image.png');
-  background-repeat: no-repeat;  
+  background-image: url("./img/home/hero-image.png");
+  background-repeat: no-repeat;
   background-size: 50%;
   background-position: 74% bottom;
 }
@@ -61,10 +61,10 @@ header {
   font-weight: 600;
   line-height: 24px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 16px 124px;
   border-radius: 40px;
-  background-color: #3692FF;
+  background-color: #3692ff;
   display: inline-flex;
   justify-content: center;
   text-decoration: none;
@@ -72,7 +72,7 @@ header {
 }
 
 .watch:hover {
-  background-color: #1967D6;
+  background-color: #1967d6;
 }
 
 .product {
@@ -94,12 +94,11 @@ header {
   text-align: right;
 }
 
-
 .product-content-tag {
   font-size: 18px;
   font-weight: 700;
   line-height: 25.2px;
-  color: #3692FF;
+  color: #3692ff;
 }
 
 .product-content-title {
@@ -115,11 +114,12 @@ header {
   line-height: 28.8px;
   color: #374151;
   letter-spacing: 8%;
+
   margin-top: 24px;
 }
 
 #bottom-banner {
-  background-image: url('./img/home/bottom-banner-image.png');
+  background-image: url("./img/home/bottom-banner-image.png");
 }
 
 .bottom-banner-title {
@@ -139,7 +139,7 @@ footer {
 
 .footer-copyright {
   display: flex;
-  color: #9CA3AF;
+  color: #9ca3af;
   font-size: 16px;
   font-weight: 400;
   line-height: 19.09px;
@@ -154,7 +154,7 @@ footer {
 }
 
 .footer-links a {
-  color: #E5E7EB;
+  color: #e5e7eb;
   text-decoration: none;
 }
 
