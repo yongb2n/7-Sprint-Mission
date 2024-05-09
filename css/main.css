@@ -34,13 +34,10 @@
 
 .banner {
   height: 540px;
-  background-color: #cfe5ff;
   display: flex;
   align-items: center;
-  background-image: url("../img/home/hero-image.png");
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position: 74% bottom;
+  background: #cfe5ff url("../img/home/hero-image.png") no-repeat 74% bottom /
+    50%;
 }
 
 .trade {
