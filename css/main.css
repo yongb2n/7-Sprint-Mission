@@ -110,8 +110,8 @@
   height: 540px;
   display: flex;
   align-items: center;
-  background: #cfe5ff url("../img/home/bottom-banner-image.png") no-repeat 74% bottom /
-    50%;
+  background: #cfe5ff url("../img/home/bottom-banner-image.png") no-repeat 74%
+    bottom / 50%;
 }
 
 .bottom-banner-title {
@@ -121,7 +121,7 @@
   color: #374151;
 }
 
-footer {
+.footer {
   padding: 32px 200px 108px;
   display: flex;
   justify-content: space-between;
@@ -137,7 +137,7 @@ footer {
   line-height: 19.09px;
 }
 
-.footer-links {
+.footer-links-wrapper {
   display: flex;
   column-gap: 30px;
   font-size: 16px;
@@ -145,11 +145,15 @@ footer {
   line-height: 19.09px;
 }
 
-.footer-links a {
+.footer-links {
   color: #e5e7eb;
 }
 
 .footer-social-icon {
   display: flex;
-  gap: 12px;
+  column-gap: 12px;
+}
+
+.social-icon {
+  display: block;
 }
