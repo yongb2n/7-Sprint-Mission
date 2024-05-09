@@ -32,7 +32,7 @@
   width: 100%;
 }
 
-.banner {
+.top-banner {
   height: 540px;
   display: flex;
   align-items: center;
@@ -108,8 +108,12 @@
   margin-top: 24px;
 }
 
-#bottom-banner {
-  background-image: url("../img/home/bottom-banner-image.png");
+.bottom-banner {
+  height: 540px;
+  display: flex;
+  align-items: center;
+  background: #cfe5ff url("../img/home/bottom-banner-image.png") no-repeat 74% bottom /
+    50%;
 }
 
 .bottom-banner-title {
