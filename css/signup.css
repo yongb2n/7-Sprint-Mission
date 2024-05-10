@@ -25,15 +25,15 @@
 }
 
 .email-label {
-  width: 47px;
+  width: fit-content;
 }
 
 .password-label {
-  width: 63px;
+  width: fit-content;
 }
 
 .verify-password-label {
-  width: 100px;
+  width: fit-content;
 }
 
 .signup-input-field-wrapper {

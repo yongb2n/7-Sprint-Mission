@@ -24,11 +24,11 @@
 }
 
 .email-label {
-  width: 47px;
+  width: fit-content;
 }
 
 .password-label {
-  width: 63px;
+  width: fit-content;
 }
 
 .login-input-field-wrapper {
