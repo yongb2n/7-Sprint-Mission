@@ -46,6 +46,10 @@
   width: 100%;
 }
 
+.password-field {
+  padding: 16px 50px 16px 24px;
+}
+
 .login-input-field:focus {
   outline-color: var(--blue);
 }
