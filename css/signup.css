@@ -61,10 +61,15 @@
   color: #9ca3af;
 }
 
+.signup-input-eye-icon-wrapper {
+  border: none;
+}
+
 .signup-input-eye-icon {
   position: absolute;
   cursor: pointer;
   right: 24px;
+  top: 16px;
 }
 
 .signup-button {
