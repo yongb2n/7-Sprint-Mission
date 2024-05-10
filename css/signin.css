@@ -4,7 +4,6 @@
 }
 
 .login-logo-wrapper {
-  display: block;
   text-align: center;
   margin-top: 60px;
   margin-bottom: 40px;
@@ -22,6 +21,15 @@
   line-height: 21.48px;
   color: #1f2937;
   margin-bottom: 16px;
+  
+}
+
+.email-label {
+  width: 47px;
+}
+
+.password-label {
+  width: 63px;
 }
 
 .login-input-field-wrapper {

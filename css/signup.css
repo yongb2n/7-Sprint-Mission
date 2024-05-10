@@ -24,6 +24,18 @@
   margin-bottom: 16px;
 }
 
+.email-label {
+  width: 47px;
+}
+
+.password-label {
+  width: 63px;
+}
+
+.verify-password-label {
+  width: 100px;
+}
+
 .signup-input-field-wrapper {
   position: relative;
   display: flex;
