@@ -64,6 +64,12 @@
   background-color: #1967d6;
 }
 
+.product-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 .product {
   display: flex;
   align-items: center;
@@ -181,12 +187,18 @@
     display: none;
   }
 
-  .wrapper {
-
+  .product-wrapper {
+    
   }
 
   .product {
-    
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
   }
 }
 
