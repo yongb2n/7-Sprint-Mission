@@ -131,3 +131,17 @@
   color: #3182f6;
   text-decoration: underline;
 }
+
+@media screen and (max-width: 767px) {
+  .signup-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 0 16px;
+    row-gap: 16px;
+  }
+
+  .signup-logo-image {
+    width: 198px;
+    height: 66px;
+  }
+}
