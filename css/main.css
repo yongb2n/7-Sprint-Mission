@@ -208,13 +208,21 @@
     height: 100%;
   }
 
+  .product-content-tag {
+    line-height: 25px;
+    font-size: 18px;
+  }
+
   .product-content-title {
     font-size: 32px;
+    line-height: 44px;
   }
 
   .product-content-description {
     font-size: 18px;
     padding-bottom: 20px;
+    font-weight: 500;
+    line-height: 21px;
   }
 
   .search-product {
@@ -234,6 +242,7 @@
   .bottom-banner-title {
     margin-bottom: 200px;
     text-align: center;
+    font-size: 40px;
   }
 
   .footer {
@@ -251,5 +260,99 @@
     background-position: center bottom;
     height: 60vh;
   }
-  
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .trade {
+    max-width: 250px;
+    font-size: 32px;
+    line-height: 44px;
+  }
+
+  .watch {
+    padding: 16px 20px;
+    font-size: 16px;
+    line-height: 19px;
+    min-width: 154px;
+    margin-top: 20px;
+    margin-bottom: 70px;
+  }
+
+  .br-tag {
+    display: none;
+  }
+
+
+  .product-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product {
+    flex-direction: column;
+    padding: 16px;
+    align-items: baseline;
+  }
+
+  .product:nth-child(2) {
+    align-items: end;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .product-content-tag {
+    font-size: 16px;
+  }
+
+  .product-content-title {
+    font-size: 24px;
+  }
+
+  .product-content-description {
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 16px;
+  }
+
+  .search-product {
+    order: 2;
+  }
+
+  .search-image {
+    order: 1;
+  }
+
+  .bottom-banner {
+    background-size: contain;
+    background-position: center bottom;
+    height: 60vh;
+  }
+
+  .bottom-banner-title {
+    margin-bottom: 200px;
+    text-align: center;
+    font-size: 32px;
+  }
+
+  .footer {
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    row-gap: 60px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .footer-copyright {
+    order: 2;
+  }
 }
