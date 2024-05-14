@@ -1,9 +1,13 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #dfdfdf;
-  background-color: #ffffff;
+  background-color: #fff;
   height: 70px;
   padding: 0 200px;
 }
@@ -75,10 +79,6 @@
   align-items: center;
   padding: 138px 0;
   gap: 64px;
-}
-
-.product-image {
-  flex: 1;
 }
 
 .product-details {
@@ -176,7 +176,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 400px;
+    margin-bottom: 200px;
   }
 
   .trade {
@@ -188,26 +188,68 @@
   }
 
   .product-wrapper {
-    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 
   .product {
-    display: flex;
     flex-direction: column;
+    padding: 24px;
+    align-items: baseline;
   }
-  
-  .product-image {
+
+  .product:nth-child(2) {
+    align-items: end;
+  }
+
+  .product-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
+  }
+
+  .product-content-title {
+    font-size: 32px;
+  }
+
+  .product-content-description {
+    font-size: 18px;
+    padding-bottom: 20px;
+  }
+
+  .search-product {
+    order: 2;
+  }
+
+  .search-image {
+    order: 1;
+  }
+
+  .bottom-banner {
+    background-size: contain;
+    background-position: center bottom;
+    height: 90vh;
+  }
+
+  .bottom-banner-title {
+    margin-bottom: 200px;
+    text-align: center;
+  }
+
+  .footer {
+    padding: 32px 104px 64px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .header {
-    margin-right: 16px;
+    padding: 0 16px;
   }
 
-  .login-button {
-    margin-left: 16px;
+  .top-banner {
+    background-size: contain;
+    background-position: center bottom;
+    height: 60vh;
   }
+  
 }
