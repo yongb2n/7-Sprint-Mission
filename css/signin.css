@@ -15,6 +15,10 @@
   margin-bottom: 24px;
 }
 
+input.login-input-error {
+  border: 1px solid #f74747;
+}
+
 .login-input-label {
   font-weight: 700;
   font-size: 18px;
@@ -37,6 +41,13 @@
   padding: 16px 24px;
   line-height: 24px;
   width: 100%;
+}
+
+.error-message-on {
+  color: red;
+  position: relative;
+  left: 20px;
+  top: 5px
 }
 
 .password-field {

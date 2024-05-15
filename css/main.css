@@ -256,7 +256,7 @@
   }
 
   .header-logo-image {
-    content: url('../img/logo/logo.png');
+    content: url("../img/logo/logo.png");
     width: 103px;
     height: 51px;
   }

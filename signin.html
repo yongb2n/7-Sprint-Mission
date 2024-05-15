@@ -25,9 +25,7 @@
 
       <form method="post">
         <div class="login-input">
-          <label class="login-input-label" for="email"
-            >이메일</label
-          >
+          <label class="login-input-label" for="email">이메일</label>
           <input
             class="login-input-field"
             type="email"
@@ -35,12 +33,11 @@
             id="email"
             placeholder="이메일을 입력해주세요"
           />
+          <span class="error-message"></span>
         </div>
 
         <div class="login-input">
-          <label class="login-input-label" for="password"
-            >비밀번호</label
-          >
+          <label class="login-input-label" for="password">비밀번호</label>
           <div class="login-input-field-wrapper">
             <input
               class="login-input-field password-field"
@@ -96,5 +93,6 @@
         <a class="login-signup-link" href="signup.html">회원가입</a>
       </div>
     </div>
+    <script src="js/validateInput.js"></script>
   </body>
 </html>
