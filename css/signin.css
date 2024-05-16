@@ -19,6 +19,10 @@ input.login-input-error {
   border: 1px solid #f74747;
 }
 
+input.password-field-error {
+  border: 1px solid #f74747;
+}
+
 .login-input-label {
   font-weight: 700;
   font-size: 18px;
