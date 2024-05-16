@@ -16,6 +16,29 @@
   margin-bottom: 24px;
 }
 
+input.signup-input-error {
+  border: 1px solid #f74747;
+}
+
+input.nickname-input-error {
+  border: 1px solid #f74747;
+}
+
+input.password-field-error {
+  border: 1px solid #f74747;
+}
+
+input.verify-password-field-error {
+  border: 1px solid #f74747;
+}
+
+.error-message-on {
+  color: red;
+  position: relative;
+  left: 20px;
+  top: 5px;
+}
+
 .signup-input-label {
   font-weight: 700;
   font-size: 18px;
