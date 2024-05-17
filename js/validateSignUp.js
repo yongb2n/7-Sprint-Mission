@@ -12,6 +12,8 @@ const verifyPasswordErrorMessage = document.querySelector(
 const nicknameInput = document.querySelector(".nickname-input-field");
 const nicknameErrorMessage = document.querySelector(".nickname-error-message");
 
+const loginButton = document.querySelector(".auth-button");
+
 const isEmailValid = (email) => {
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
   const isEmail = emailPattern.test(email);
@@ -33,7 +35,7 @@ const validateEmailInput = (email) => {
     emailInput.classList.add("auth-input-error");
     emailErrorMessage.classList.add("error-message-on");
     emailErrorMessage.textContent = "이메일을 입력해주세요.";
-    return;
+    return false;
   }
 
   if (!isEmailValid(email)) {
@@ -43,12 +45,13 @@ const validateEmailInput = (email) => {
     emailInput.classList.add("auth-input-error");
     emailErrorMessage.classList.add("error-message-on");
     emailErrorMessage.textContent = "잘못된 이메일 형식입니다.";
-    return;
+    return false;
   }
 
   emailInput.classList.remove("auth-input-error");
   emailErrorMessage.classList.remove("error-message-on");
   emailErrorMessage.textContent = "";
+  return true;
 };
 
 const validateNicknameInput = (nickname) => {
@@ -56,12 +59,13 @@ const validateNicknameInput = (nickname) => {
     nicknameInput.classList.add("nickname-input-error");
     nicknameErrorMessage.classList.add("error-message-on");
     nicknameErrorMessage.textContent = "닉네임을 입력해주세요.";
-    return;
+    return false;
   }
 
   nicknameInput.classList.remove("nickname-input-error");
   nicknameErrorMessage.classList.remove("error-message-on");
   nicknameErrorMessage.textContent = "";
+  return true;
 };
 
 const validatePasswordInput = (password) => {
@@ -69,7 +73,7 @@ const validatePasswordInput = (password) => {
     passwordInput.classList.add("password-field-error");
     passwordErrorMessage.classList.add("error-message-on");
     passwordErrorMessage.textContent = "비밀번호를 입력해주세요.";
-    return;
+    return false;
   }
 
   if (!isPasswordValid(password)) {
@@ -79,12 +83,13 @@ const validatePasswordInput = (password) => {
     passwordInput.classList.add("password-field-error");
     passwordErrorMessage.classList.add("error-message-on");
     passwordErrorMessage.textContent = "비밀번호를 8자 이상 입력해주세요.";
-    return;
+    return false;
   }
 
   passwordInput.classList.remove("password-field-error");
   passwordErrorMessage.classList.remove("error-message-on");
   passwordErrorMessage.textContent = "";
+  return true;
 };
 
 const validateVerifyPasswordInput = (password, verifyPassword) => {
@@ -92,7 +97,7 @@ const validateVerifyPasswordInput = (password, verifyPassword) => {
     verifyPasswordInput.classList.add("verify-password-field-error");
     verifyPasswordErrorMessage.classList.add("error-message-on");
     verifyPasswordErrorMessage.textContent = "비밀번호를 입력해주세요.";
-    return;
+    return false;
   }
 
   if (password !== verifyPassword) {
@@ -102,12 +107,13 @@ const validateVerifyPasswordInput = (password, verifyPassword) => {
     verifyPasswordInput.classList.add("verify-password-field-error");
     verifyPasswordErrorMessage.classList.add("error-message-on");
     verifyPasswordErrorMessage.textContent = "비밀번호가 일치하지 않습니다.";
-    return;
+    return false;
   }
 
   verifyPasswordInput.classList.remove("verify-password-field-error");
   verifyPasswordErrorMessage.classList.remove("error-message-on");
   verifyPasswordErrorMessage.textContent = "";
+  return true;
 };
 
 emailInput.addEventListener("focusout", () => {
@@ -124,4 +130,112 @@ passwordInput.addEventListener("focusout", () => {
 
 verifyPasswordInput.addEventListener("focusout", () => {
   validateVerifyPasswordInput(passwordInput.value, verifyPasswordInput.value);
+});
+
+emailInput.addEventListener("input", () => {
+  if (
+    emailInput.value !== "" &&
+    nicknameInput.value !== "" &&
+    passwordInput.value !== "" &&
+    verifyPasswordInput.value !== "" &&
+    validateEmailInput(emailInput.value) === true &&
+    validateNicknameInput(nicknameInput.value) === true &&
+    validatePasswordInput(passwordInput.value) === true &&
+    validateVerifyPasswordInput(
+      passwordInput.value,
+      verifyPasswordInput.value
+    ) === true
+  ) {
+    loginButton.removeAttribute("disabled", "");
+    loginButton.classList.remove("button-disabled");
+  } else {
+    loginButton.setAttribute("disabled", "");
+    loginButton.classList.add("button-disabled");
+  }
+});
+
+nicknameInput.addEventListener("input", () => {
+  if (
+    emailInput.value !== "" &&
+    nicknameInput.value !== "" &&
+    passwordInput.value !== "" &&
+    verifyPasswordInput.value !== "" &&
+    validateEmailInput(emailInput.value) === true &&
+    validateNicknameInput(nicknameInput.value) === true &&
+    validatePasswordInput(passwordInput.value) === true &&
+    validateVerifyPasswordInput(
+      passwordInput.value,
+      verifyPasswordInput.value
+    ) === true
+  ) {
+    loginButton.removeAttribute("disabled", "");
+    loginButton.classList.remove("button-disabled");
+  } else {
+    loginButton.setAttribute("disabled", "");
+    loginButton.classList.add("button-disabled");
+  }
+});
+
+passwordInput.addEventListener("input", () => {
+  if (
+    emailInput.value !== "" &&
+    nicknameInput.value !== "" &&
+    passwordInput.value !== "" &&
+    verifyPasswordInput.value !== "" &&
+    validateEmailInput(emailInput.value) === true &&
+    validateNicknameInput(nicknameInput.value) === true &&
+    validatePasswordInput(passwordInput.value) === true &&
+    validateVerifyPasswordInput(
+      passwordInput.value,
+      verifyPasswordInput.value
+    ) === true
+  ) {
+    loginButton.removeAttribute("disabled", "");
+    loginButton.classList.remove("button-disabled");
+  } else {
+    loginButton.setAttribute("disabled", "");
+    loginButton.classList.add("button-disabled");
+  }
+});
+
+verifyPasswordInput.addEventListener("input", () => {
+  if (
+    emailInput.value !== "" &&
+    nicknameInput.value !== "" &&
+    passwordInput.value !== "" &&
+    verifyPasswordInput.value !== "" &&
+    validateEmailInput(emailInput.value) === true &&
+    validateNicknameInput(nicknameInput.value) === true &&
+    validatePasswordInput(passwordInput.value) === true &&
+    validateVerifyPasswordInput(
+      passwordInput.value,
+      verifyPasswordInput.value
+    ) === true
+  ) {
+    loginButton.removeAttribute("disabled", "");
+    loginButton.classList.remove("button-disabled");
+  } else {
+    loginButton.setAttribute("disabled", "");
+    loginButton.classList.add("button-disabled");
+  }
+});
+
+loginButton.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  if (
+    emailInput.value !== "" &&
+    nicknameInput.value !== "" &&
+    passwordInput.value !== "" &&
+    verifyPasswordInput.value !== "" &&
+    validateEmailInput(emailInput.value) === true &&
+    validateNicknameInput(nicknameInput.value) === true &&
+    validatePasswordInput(passwordInput.value) === true &&
+    validateVerifyPasswordInput(
+      passwordInput.value,
+      verifyPasswordInput.value
+    ) === true
+  ) {
+    window.location.href = "/signin.html";
+  }
 });
