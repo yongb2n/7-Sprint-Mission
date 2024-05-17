@@ -92,11 +92,16 @@ input.verify-password-field-error {
   border-radius: 40px;
   padding: 20px;
   border: none;
-  background-color: #9ca3af;
+  background-color: var(--blue);
   color: #fff;
   font-size: 20px;
   line-height: 24px;
   font-weight: 600;
+}
+
+.button-disabled {
+  background: var(--gray-400);
+  cursor: default;
 }
 
 .social-auth-container {
