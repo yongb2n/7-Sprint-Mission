@@ -25,11 +25,6 @@ const isPasswordValid = (password) => {
   return isPassword;
 };
 
-const isVerifyPasswordValid = (password) => {
-  const isVerifyPassword = password.length >= 8;
-  return isVerifyPassword;
-};
-
 const validateEmailInput = (email) => {
   if (email === "") {
     emailInput.classList.add("auth-input-error");
@@ -123,93 +118,37 @@ verifyPasswordInput.addEventListener("focusout", () => {
   validateVerifyPasswordInput(passwordInput.value, verifyPasswordInput.value);
 });
 
-emailInput.addEventListener("input", () => {
-  if (
-    emailInput.value !== "" &&
-    nicknameInput.value !== "" &&
-    passwordInput.value !== "" &&
-    verifyPasswordInput.value !== "" &&
-    validateEmailInput(emailInput.value) === true &&
-    validateNicknameInput(nicknameInput.value) === true &&
-    validatePasswordInput(passwordInput.value) === true &&
-    validateVerifyPasswordInput(
-      passwordInput.value,
-      verifyPasswordInput.value
-    ) === true
-  ) {
-    loginButton.removeAttribute("disabled", "");
-    loginButton.classList.remove("button-disabled");
-  } else {
-    loginButton.setAttribute("disabled", "");
-    loginButton.classList.add("button-disabled");
-  }
-});
+const handleInput = () => {
+  const emailValidationResult = validateEmailInput(emailInput.value);
+  const nicknameValidationResult = validateNicknameInput(nicknameInput.value);
+  const passwordValidationResult = validatePasswordInput(passwordInput.value);
+  const verifyPasswordValidationResult = validateVerifyPasswordInput(
+    passwordInput.value ,verifyPasswordInput.value
+  );
 
-nicknameInput.addEventListener("input", () => {
-  if (
-    emailInput.value !== "" &&
-    nicknameInput.value !== "" &&
-    passwordInput.value !== "" &&
-    verifyPasswordInput.value !== "" &&
-    validateEmailInput(emailInput.value) === true &&
-    validateNicknameInput(nicknameInput.value) === true &&
-    validatePasswordInput(passwordInput.value) === true &&
-    validateVerifyPasswordInput(
-      passwordInput.value,
-      verifyPasswordInput.value
-    ) === true
-  ) {
-    loginButton.removeAttribute("disabled", "");
-    loginButton.classList.remove("button-disabled");
-  } else {
-    loginButton.setAttribute("disabled", "");
-    loginButton.classList.add("button-disabled");
-  }
-});
+  const isEmailNotEmpty = emailInput.value !== "";
+  const isNicknameNotEmpty = nicknameInput.value !== "";
+  const isPasswordNotEmpty = passwordInput.value !== "";
+  const isVerifyPasswordNotEmpty = verifyPasswordInput.value !== "";
 
-passwordInput.addEventListener("input", () => {
-  if (
-    emailInput.value !== "" &&
-    nicknameInput.value !== "" &&
-    passwordInput.value !== "" &&
-    verifyPasswordInput.value !== "" &&
-    validateEmailInput(emailInput.value) === true &&
-    validateNicknameInput(nicknameInput.value) === true &&
-    validatePasswordInput(passwordInput.value) === true &&
-    validateVerifyPasswordInput(
-      passwordInput.value,
-      verifyPasswordInput.value
-    ) === true
-  ) {
-    loginButton.removeAttribute("disabled", "");
-    loginButton.classList.remove("button-disabled");
-  } else {
-    loginButton.setAttribute("disabled", "");
-    loginButton.classList.add("button-disabled");
-  }
-});
+  const isFormValid =
+    isEmailNotEmpty &&
+    isNicknameNotEmpty &&
+    isPasswordNotEmpty &&
+    isVerifyPasswordNotEmpty &&
+    emailValidationResult &&
+    nicknameValidationResult &&
+    passwordValidationResult &&
+    verifyPasswordValidationResult;
 
-verifyPasswordInput.addEventListener("input", () => {
-  if (
-    emailInput.value !== "" &&
-    nicknameInput.value !== "" &&
-    passwordInput.value !== "" &&
-    verifyPasswordInput.value !== "" &&
-    validateEmailInput(emailInput.value) === true &&
-    validateNicknameInput(nicknameInput.value) === true &&
-    validatePasswordInput(passwordInput.value) === true &&
-    validateVerifyPasswordInput(
-      passwordInput.value,
-      verifyPasswordInput.value
-    ) === true
-  ) {
-    loginButton.removeAttribute("disabled", "");
-    loginButton.classList.remove("button-disabled");
-  } else {
-    loginButton.setAttribute("disabled", "");
-    loginButton.classList.add("button-disabled");
-  }
-});
+  loginButton.disabled = !isFormValid;
+  loginButton.classList.toggle("button-disabled", !isFormValid);
+};
+
+emailInput.addEventListener("input", handleInput);
+nicknameInput.addEventListener("input", handleInput);
+passwordInput.addEventListener("input", handleInput);
+verifyPasswordInput.addEventListener("input", handleInput);
 
 loginButton.addEventListener("click", (event) => {
   event.preventDefault();

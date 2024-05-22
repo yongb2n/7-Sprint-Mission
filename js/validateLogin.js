@@ -68,35 +68,26 @@ passwordInput.addEventListener("focusout", () => {
   validatePasswordInput(passwordInput.value);
 });
 
-emailInput.addEventListener("input", () => {
-  if (
-    emailInput.value !== "" &&
-    passwordInput.value !== "" &&
-    validateEmailInput(emailInput.value) === true &&
-    validatePasswordInput(passwordInput.value) === true
-  ) {
-    loginButton.removeAttribute("disabled", "");
-    loginButton.classList.remove("button-disabled");
-  } else {
-    loginButton.setAttribute("disabled", "");
-    loginButton.classList.add("button-disabled");
-  }
-});
+const handleInput = () => {
+  const emailValidationResult = validateEmailInput(emailInput.value);
+  const passwordValidationResult = validatePasswordInput(passwordInput.value);
+  
+  const isEmailNotEmpty = emailInput.value !== "";
+  const isPasswordNotEmpty = passwordInput.value !== "";
 
-passwordInput.addEventListener("input", () => {
-  if (
-    emailInput.value !== "" &&
-    passwordInput.value !== "" &&
-    validateEmailInput(emailInput.value) === true &&
-    validatePasswordInput(passwordInput.value) === true
-  ) {
-    loginButton.removeAttribute("disabled", "");
-    loginButton.classList.remove("button-disabled");
-  } else {
-    loginButton.setAttribute("disabled", "");
-    loginButton.classList.add("button-disabled");
-  }
-});
+  const isFormValid =
+    isEmailNotEmpty &&
+    isPasswordNotEmpty &&
+    emailValidationResult &&
+    passwordValidationResult;
+
+  loginButton.disabled = !isFormValid;
+  loginButton.classList.toggle("button-disabled", !isFormValid);
+};
+
+// TODO: 이메일 입력 후에 바로 비밀번호 인풋에 에러 메세지 나타나는 거 해결 하기
+emailInput.addEventListener("input", handleInput);
+passwordInput.addEventListener("input", handleInput);
 
 loginButton.addEventListener("click", (event) => {
   event.preventDefault();
