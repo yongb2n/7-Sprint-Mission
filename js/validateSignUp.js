@@ -14,6 +14,15 @@ const nicknameErrorMessage = document.querySelector(".nickname-error-message");
 
 const loginButton = document.querySelector(".auth-button");
 
+let isEmailNotEmpty = false;
+let isNicknameNotEmpty = false;
+let isPasswordNotEmpty = false;
+let isVerifyPasswordNotEmpty = false;
+let emailValidationResult = false;
+let nicknameValidationResult = false;
+let passwordValidationResult = false;
+let verifyPasswordValidationResult = false;
+
 const isEmailValid = (email) => {
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
   const isEmail = emailPattern.test(email);
@@ -102,6 +111,48 @@ const validateVerifyPasswordInput = (password, verifyPassword) => {
   return true;
 };
 
+const handleInput = () => {
+  const isFormValid =
+    isEmailNotEmpty &&
+    isNicknameNotEmpty &&
+    isPasswordNotEmpty &&
+    isVerifyPasswordNotEmpty &&
+    emailValidationResult &&
+    nicknameValidationResult &&
+    passwordValidationResult &&
+    verifyPasswordValidationResult;
+
+  loginButton.disabled = !isFormValid;
+  loginButton.classList.toggle("button-disabled", !isFormValid);
+};
+
+const handleEmailInput = () => {
+  emailValidationResult = validateEmailInput(emailInput.value);
+  isEmailNotEmpty = emailInput.value !== "";
+  handleInput();
+};
+
+const handleNicknameInput = () => {
+  nicknameValidationResult = validateNicknameInput(nicknameInput.value);
+  isNicknameNotEmpty = nicknameInput.value !== "";
+  handleInput();
+};
+
+const handlePasswordInput = () => {
+  passwordValidationResult = validatePasswordInput(passwordInput.value);
+  isPasswordNotEmpty = passwordInput.value !== "";
+  handleInput();
+};
+
+const handleVerifyPasswordInput = () => {
+  verifyPasswordValidationResult = validateVerifyPasswordInput(
+    passwordInput.value,
+    verifyPasswordInput.value
+  );
+  isVerifyPasswordNotEmpty = verifyPasswordInput.value !== "";
+  handleInput();
+};
+
 emailInput.addEventListener("focusout", () => {
   validateEmailInput(emailInput.value);
 });
@@ -118,20 +169,15 @@ verifyPasswordInput.addEventListener("focusout", () => {
   validateVerifyPasswordInput(passwordInput.value, verifyPasswordInput.value);
 });
 
-const handleInput = () => {
-  const emailValidationResult = validateEmailInput(emailInput.value);
-  const nicknameValidationResult = validateNicknameInput(nicknameInput.value);
-  const passwordValidationResult = validatePasswordInput(passwordInput.value);
-  const verifyPasswordValidationResult = validateVerifyPasswordInput(
-    passwordInput.value ,verifyPasswordInput.value
-  );
+emailInput.addEventListener("input", handleEmailInput);
+nicknameInput.addEventListener("input", handleNicknameInput);
+passwordInput.addEventListener("input", handlePasswordInput);
+verifyPasswordInput.addEventListener("input", handleVerifyPasswordInput);
 
-  const isEmailNotEmpty = emailInput.value !== "";
-  const isNicknameNotEmpty = nicknameInput.value !== "";
-  const isPasswordNotEmpty = passwordInput.value !== "";
-  const isVerifyPasswordNotEmpty = verifyPasswordInput.value !== "";
+loginButton.addEventListener("click", (event) => {
+  event.preventDefault();
 
-  const isFormValid =
+  if (
     isEmailNotEmpty &&
     isNicknameNotEmpty &&
     isPasswordNotEmpty &&
@@ -139,32 +185,7 @@ const handleInput = () => {
     emailValidationResult &&
     nicknameValidationResult &&
     passwordValidationResult &&
-    verifyPasswordValidationResult;
-
-  loginButton.disabled = !isFormValid;
-  loginButton.classList.toggle("button-disabled", !isFormValid);
-};
-
-emailInput.addEventListener("input", handleInput);
-nicknameInput.addEventListener("input", handleInput);
-passwordInput.addEventListener("input", handleInput);
-verifyPasswordInput.addEventListener("input", handleInput);
-
-loginButton.addEventListener("click", (event) => {
-  event.preventDefault();
-
-  if (
-    emailInput.value !== "" &&
-    nicknameInput.value !== "" &&
-    passwordInput.value !== "" &&
-    verifyPasswordInput.value !== "" &&
-    validateEmailInput(emailInput.value) === true &&
-    validateNicknameInput(nicknameInput.value) === true &&
-    validatePasswordInput(passwordInput.value) === true &&
-    validateVerifyPasswordInput(
-      passwordInput.value,
-      verifyPasswordInput.value
-    ) === true
+    verifyPasswordValidationResult
   ) {
     window.location.href = "/signin.html";
   }

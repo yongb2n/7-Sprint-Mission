@@ -6,6 +6,11 @@ const passwordErrorMessage = document.querySelector(".password-error-message");
 
 const loginButton = document.querySelector(".auth-button");
 
+let isEmailNotEmpty = false;
+let isPasswordNotEmpty = false;
+let emailValidationResult = false;
+let passwordValidationResult = false;
+
 const isEmailValid = (email) => {
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
   const isEmail = emailPattern.test(email);
@@ -60,21 +65,7 @@ const validatePasswordInput = (password) => {
   return true;
 };
 
-emailInput.addEventListener("focusout", () => {
-  validateEmailInput(emailInput.value);
-});
-
-passwordInput.addEventListener("focusout", () => {
-  validatePasswordInput(passwordInput.value);
-});
-
 const handleInput = () => {
-  const emailValidationResult = validateEmailInput(emailInput.value);
-  const passwordValidationResult = validatePasswordInput(passwordInput.value);
-  
-  const isEmailNotEmpty = emailInput.value !== "";
-  const isPasswordNotEmpty = passwordInput.value !== "";
-
   const isFormValid =
     isEmailNotEmpty &&
     isPasswordNotEmpty &&
@@ -85,18 +76,37 @@ const handleInput = () => {
   loginButton.classList.toggle("button-disabled", !isFormValid);
 };
 
-// TODO: 이메일 입력 후에 바로 비밀번호 인풋에 에러 메세지 나타나는 거 해결 하기
-emailInput.addEventListener("input", handleInput);
-passwordInput.addEventListener("input", handleInput);
+const handleEmailInput = () => {
+  emailValidationResult = validateEmailInput(emailInput.value);
+  isEmailNotEmpty = emailInput.value !== "";
+  handleInput();
+};
+
+const handlePasswordInput = () => {
+  passwordValidationResult = validatePasswordInput(passwordInput.value);
+  isPasswordNotEmpty = passwordInput.value !== "";
+  handleInput();
+};
+
+emailInput.addEventListener("focusout", () => {
+  validateEmailInput(emailInput.value);
+});
+
+passwordInput.addEventListener("focusout", () => {
+  validatePasswordInput(passwordInput.value);
+});
+
+emailInput.addEventListener("input", handleEmailInput);
+passwordInput.addEventListener("input", handlePasswordInput);
 
 loginButton.addEventListener("click", (event) => {
   event.preventDefault();
 
   if (
-    emailInput.value !== "" &&
-    passwordInput.value !== "" &&
-    validateEmailInput(emailInput.value) === true &&
-    validatePasswordInput(passwordInput.value) === true
+    isEmailNotEmpty &&
+    isPasswordNotEmpty &&
+    emailValidationResult &&
+    passwordValidationResult
   ) {
     window.location.href = "/items";
   }
