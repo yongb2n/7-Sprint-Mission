@@ -25,89 +25,158 @@ let verifyPasswordValidationResult = false;
 
 const isEmailValid = (email) => {
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
-  const isEmail = emailPattern.test(email);
-  return isEmail;
+  return emailPattern.test(email);
 };
 
 const isPasswordValid = (password) => {
-  const isPassword = password.length >= 8;
-  return isPassword;
+  return password.length >= 8;
+};
+
+const setAuthInputError = (input, err, text) => {
+  input.classList.add("auth-input-error");
+  err.classList.add("error-message-on");
+  err.textContent = text;
+};
+
+const toggleAuthInputError = (input, err, text) => {
+  input.classList.toggle("auth-input-error", true);
+  err.classList.toggle("error-message-on", true);
+  err.textContent = text;
+};
+
+const removeAuthInputError = (input, err) => {
+  input.classList.remove("auth-input-error");
+  err.classList.remove("error-message-on");
+  err.textContent = "";
+};
+
+const setNicknameInputError = (input, err, text) => {
+  input.classList.add("nickname-input-error", true);
+  err.classList.add("error-message-on", true);
+  err.textContent = text;
+};
+
+const removeNicknameInputError = (input, err) => {
+  input.classList.remove("nickname-input-error");
+  err.classList.remove("error-message-on");
+  err.textContent = "";
+};
+
+const setPasswordInputError = (input, err, text) => {
+  input.classList.add("password-field-error");
+  err.classList.add("error-message-on");
+  err.textContent = text;
+};
+
+const togglePasswordInputError = (input, err, text) => {
+  input.classList.toggle("password-field-error", true);
+  err.classList.toggle("error-message-on", true);
+  err.textContent = text;
+};
+
+const removePasswordInputError = (input, err) => {
+  input.classList.remove("password-field-error");
+  err.classList.remove("error-message-on");
+  err.textContent = "";
+};
+
+const setVerifyPasswordInputError = (input, err, text) => {
+  input.classList.add("password-field-error");
+  err.classList.add("error-message-on");
+  err.textContent = text;
+};
+
+const toggleVerifyPasswordInputError = (input, err, text) => {
+  input.classList.toggle("password-field-error", true);
+  err.classList.toggle("error-message-on", true);
+  err.textContent = text;
+};
+
+const removeVerifyPasswordInputError = (input, err) => {
+  input.classList.remove("password-field-error");
+  err.classList.remove("error-message-on");
+  err.textContent = "";
 };
 
 const validateEmailInput = (email) => {
   if (email === "") {
-    emailInput.classList.add("auth-input-error");
-    emailErrorMessage.classList.add("error-message-on");
-    emailErrorMessage.textContent = "이메일을 입력해주세요.";
+    setAuthInputError(emailInput, emailErrorMessage, "이메일을 입력해주세요.");
     return false;
   }
 
   if (!isEmailValid(email)) {
-    emailInput.classList.toggle("auth-input-error", true);
-    emailErrorMessage.classList.toggle("error-message-on", true);
-    emailErrorMessage.textContent = "잘못된 이메일 형식입니다.";
+    toggleAuthInputError(
+      emailInput,
+      emailErrorMessage,
+      "잘못된 이메일 형식입니다."
+    );
     return false;
   }
 
-  emailInput.classList.remove("auth-input-error");
-  emailErrorMessage.classList.remove("error-message-on");
-  emailErrorMessage.textContent = "";
+  removeAuthInputError(emailInput, emailErrorMessage);
   return true;
 };
 
 const validateNicknameInput = (nickname) => {
   if (nickname === "") {
-    nicknameInput.classList.add("nickname-input-error");
-    nicknameErrorMessage.classList.add("error-message-on");
-    nicknameErrorMessage.textContent = "닉네임을 입력해주세요.";
+    setNicknameInputError(
+      nicknameInput,
+      nicknameErrorMessage,
+      "닉네임을 입력해주세요."
+    );
     return false;
   }
 
-  nicknameInput.classList.remove("nickname-input-error");
-  nicknameErrorMessage.classList.remove("error-message-on");
-  nicknameErrorMessage.textContent = "";
+  removeNicknameInputError(nicknameInput, nicknameErrorMessage);
   return true;
 };
 
 const validatePasswordInput = (password) => {
   if (password === "") {
-    passwordInput.classList.add("password-field-error");
-    passwordErrorMessage.classList.add("error-message-on");
-    passwordErrorMessage.textContent = "비밀번호를 입력해주세요.";
+    setPasswordInputError(
+      passwordInput,
+      passwordErrorMessage,
+      "비밀번호를 입력해주세요."
+    );
     return false;
   }
 
   if (!isPasswordValid(password)) {
-    passwordInput.classList.toggle("password-field-error", true);
-    passwordErrorMessage.classList.toggle("error-message-on", true);
-    passwordErrorMessage.textContent = "비밀번호를 8자 이상 입력해주세요.";
+    togglePasswordInputError(
+      passwordInput,
+      passwordErrorMessage,
+      "비밀번호를 8자 이상 입력해주세요."
+    );
     return false;
   }
 
-  passwordInput.classList.remove("password-field-error");
-  passwordErrorMessage.classList.remove("error-message-on");
-  passwordErrorMessage.textContent = "";
+  removePasswordInputError(passwordInput, passwordErrorMessage);
   return true;
 };
 
 const validateVerifyPasswordInput = (password, verifyPassword) => {
   if (verifyPassword === "") {
-    verifyPasswordInput.classList.add("verify-password-field-error");
-    verifyPasswordErrorMessage.classList.add("error-message-on");
-    verifyPasswordErrorMessage.textContent = "비밀번호를 입력해주세요.";
+    setVerifyPasswordInputError(
+      verifyPasswordInput,
+      verifyPasswordErrorMessage,
+      "비밀번호를 입력해주세요."
+    );
     return false;
   }
 
   if (password !== verifyPassword) {
-    verifyPasswordInput.classList.toggle("verify-password-field-error", true);
-    verifyPasswordErrorMessage.classList.toggle("error-message-on", true);
-    verifyPasswordErrorMessage.textContent = "비밀번호가 일치하지 않습니다.";
+    toggleVerifyPasswordInputError(
+      verifyPasswordInput,
+      verifyPasswordErrorMessage,
+      "비밀번호가 일치하지 않습니다."
+    );
     return false;
   }
 
-  verifyPasswordInput.classList.remove("verify-password-field-error");
-  verifyPasswordErrorMessage.classList.remove("error-message-on");
-  verifyPasswordErrorMessage.textContent = "";
+  removeVerifyPasswordInputError(
+    verifyPasswordInput,
+    verifyPasswordErrorMessage
+  );
   return true;
 };
 
