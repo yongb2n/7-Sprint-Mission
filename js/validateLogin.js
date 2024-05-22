@@ -49,7 +49,7 @@ const validatePasswordInput = (password) => {
 
   if (!isPasswordValid(password)) {
     passwordInput.classList.toggle("password-field-error", true);
-    passwordInput.classList.toggle("password-field-error", true);
+    passwordErrorMessage.classList.toggle("error-message-on", true);
     passwordErrorMessage.textContent = "비밀번호를 8자 이상 입력해주세요.";
     return false;
   }

@@ -39,11 +39,8 @@ const validateEmailInput = (email) => {
   }
 
   if (!isEmailValid(email)) {
-    emailInput.classList.remove("auth-input-error");
-    emailErrorMessage.classList.remove("error-message-on");
-
-    emailInput.classList.add("auth-input-error");
-    emailErrorMessage.classList.add("error-message-on");
+    emailInput.classList.toggle("auth-input-error", true);
+    emailErrorMessage.classList.toggle("error-message-on", true);
     emailErrorMessage.textContent = "잘못된 이메일 형식입니다.";
     return false;
   }
@@ -77,11 +74,8 @@ const validatePasswordInput = (password) => {
   }
 
   if (!isPasswordValid(password)) {
-    passwordInput.classList.remove("password-field-error");
-    passwordInput.classList.remove("error-message-on");
-
-    passwordInput.classList.add("password-field-error");
-    passwordErrorMessage.classList.add("error-message-on");
+    passwordInput.classList.toggle("password-field-error", true);
+    passwordErrorMessage.classList.toggle("error-message-on", true);
     passwordErrorMessage.textContent = "비밀번호를 8자 이상 입력해주세요.";
     return false;
   }
@@ -101,11 +95,8 @@ const validateVerifyPasswordInput = (password, verifyPassword) => {
   }
 
   if (password !== verifyPassword) {
-    verifyPasswordInput.classList.remove("verify-password-field-error");
-    verifyPasswordErrorMessage.classList.remove("error-message-on");
-
-    verifyPasswordInput.classList.add("verify-password-field-error");
-    verifyPasswordErrorMessage.classList.add("error-message-on");
+    verifyPasswordInput.classList.toggle("verify-password-field-error", true);
+    verifyPasswordErrorMessage.classList.toggle("error-message-on", true);
     verifyPasswordErrorMessage.textContent = "비밀번호가 일치하지 않습니다.";
     return false;
   }
