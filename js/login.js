@@ -6,17 +6,19 @@ import {
   loginButton,
   togglePasswordButton,
   togglePasswordInput,
-  togglePasswordImage
+  togglePasswordImage,
 } from "./domElements.js";
+
 import {
   validateEmailInput,
   validatePasswordInput,
 } from "./inputValidators.js";
+
 import {
   handleEmailInput,
   handlePasswordInput,
   isFormValid,
-  togglePassword
+  togglePassword,
 } from "./inputHandlers.js";
 
 if (emailInput) {

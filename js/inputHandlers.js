@@ -87,7 +87,7 @@ export const isFormValid = () => {
 };
 
 export const togglePassword = (input, img) => {
-  input.forEach(input => {
+  input.forEach((input) => {
     if (input.type === "password") {
       input.type = "text";
       img.setAttribute("src", "img/icons/eye-visible.svg");

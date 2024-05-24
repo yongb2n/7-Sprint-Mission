@@ -10,14 +10,16 @@ import {
   nicknameErrorMessage,
   togglePasswordButton,
   togglePasswordInput,
-  togglePasswordImage
+  togglePasswordImage,
 } from "./domElements.js";
+
 import {
   validateEmailInput,
   validatePasswordInput,
   validateVerifyPasswordInput,
   validateNicknameInput,
 } from "./inputValidators.js";
+
 import {
   handleEmailInput,
   handlePasswordInput,

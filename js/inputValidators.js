@@ -1,4 +1,4 @@
-import * as validation from './validation.js';
+import * as validation from "./validation.js";
 
 import {
   setAuthInputError,
@@ -11,8 +11,8 @@ import {
   removePasswordInputError,
   setVerifyPasswordInputError,
   toggleVerifyPasswordInputError,
-  removeVerifyPasswordInputError
-} from './errorHandlers.js';
+  removeVerifyPasswordInputError,
+} from "./errorHandlers.js";
 
 export const validateEmailInput = (emailInput, emailErrorMessage) => {
   const email = emailInput.value;
@@ -73,7 +73,11 @@ export const validatePasswordInput = (passwordInput, passwordErrorMessage) => {
   return true;
 };
 
-export const validateVerifyPasswordInput = (passwordInput, verifyPasswordInput, verifyPasswordErrorMessage) => {
+export const validateVerifyPasswordInput = (
+  passwordInput,
+  verifyPasswordInput,
+  verifyPasswordErrorMessage
+) => {
   const password = passwordInput.value;
   const verifyPassword = verifyPasswordInput.value;
   if (verifyPassword === "") {
