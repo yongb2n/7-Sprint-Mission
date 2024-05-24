@@ -14,3 +14,15 @@ export const verifyPasswordErrorMessage = document.querySelector(
 );
 export const loginButton = document.querySelector(".auth-button");
 export const signupButton = document.querySelector(".signup-button");
+
+export const togglePasswordButton = document.querySelectorAll(
+  ".toggle-password-button"
+);
+
+export const togglePasswordInput = document.querySelectorAll(
+  ".auth-password-field, .verify-password-field"
+);
+
+export const togglePasswordImage = document.querySelectorAll(
+  ".toggle-password-image"
+);

@@ -85,3 +85,17 @@ export const isFormValid = () => {
       : true)
   );
 };
+
+export const togglePassword = (input, img) => {
+  input.forEach(input => {
+    if (input.type === "password") {
+      input.type = "text";
+      img.setAttribute("src", "img/icons/eye-visible.svg");
+      img.setAttribute("alt", "비밀번호 숨기기");
+    } else {
+      input.type = "password";
+      img.setAttribute("src", "img/icons/eye-invisible.svg");
+      img.setAttribute("alt", "비밀번호 보기");
+    }
+  });
+};

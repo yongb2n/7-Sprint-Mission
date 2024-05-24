@@ -8,6 +8,9 @@ import {
   passwordErrorMessage,
   verifyPasswordErrorMessage,
   nicknameErrorMessage,
+  togglePasswordButton,
+  togglePasswordInput,
+  togglePasswordImage
 } from "./domElements.js";
 import {
   validateEmailInput,
@@ -21,6 +24,7 @@ import {
   handleVerifyPasswordInput,
   handleNicknameInput,
   isFormValid,
+  togglePassword,
 } from "./inputHandlers.js";
 
 if (emailInput) {
@@ -68,3 +72,10 @@ if (signupButton) {
     }
   });
 }
+
+togglePasswordButton.forEach((button, index) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    togglePassword([togglePasswordInput[index]], togglePasswordImage[index]);
+  });
+});

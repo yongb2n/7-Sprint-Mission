@@ -4,6 +4,9 @@ import {
   emailErrorMessage,
   passwordErrorMessage,
   loginButton,
+  togglePasswordButton,
+  togglePasswordInput,
+  togglePasswordImage
 } from "./domElements.js";
 import {
   validateEmailInput,
@@ -13,6 +16,7 @@ import {
   handleEmailInput,
   handlePasswordInput,
   isFormValid,
+  togglePassword
 } from "./inputHandlers.js";
 
 if (emailInput) {
@@ -40,3 +44,10 @@ if (loginButton) {
     }
   });
 }
+
+togglePasswordButton.forEach((button, index) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    togglePassword([togglePasswordInput[index]], togglePasswordImage[index]);
+  });
+});
