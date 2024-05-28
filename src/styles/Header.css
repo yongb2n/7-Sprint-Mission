@@ -1,0 +1,44 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  column-gap: 47px;
+  padding: 0 200px;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.header-logo {
+  width: 153px;
+  height: 51px;
+}
+
+.header-list-wrapper {
+  column-gap: 41px;
+  display: flex;
+  flex-grow: 1;
+}
+
+.header-list {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21px;
+  text-align: center;
+  color: #4b5563;
+}
+
+.header-login-button {
+  display: inline-flex;
+  background-color: #3692ff;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  gap: 10px;
+}
