@@ -1,9 +1,13 @@
+import BestItem from "../components/BestItem";
 import Header from "../components/Header";
 
 function MainPage() {
   return (
-    <Header />
-  )
+    <>
+      <Header />
+      <BestItem />
+    </>
+  );
 }
 
 export default MainPage;
