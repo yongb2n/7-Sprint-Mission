@@ -1,4 +1,4 @@
-const PRODUCTS_URL = "panda-market-api.vercel.app/products";
+const PRODUCTS_URL = "https://panda-market-api.vercel.app/products";
 
 export async function getProducts({
   page = 1,
