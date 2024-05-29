@@ -13,3 +13,8 @@ button {
   border: none;
   cursor: pointer;
 }
+
+.item-container {
+  padding: 0 360px;
+  width: 100%;
+}

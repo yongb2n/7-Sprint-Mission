@@ -6,9 +6,8 @@
   column-gap: 47px;
   padding: 0 200px;
   height: 70px;
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
   border-bottom: 1px solid #dfdfdf;
 }
 
