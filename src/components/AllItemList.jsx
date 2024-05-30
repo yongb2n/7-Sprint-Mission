@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getProducts } from "../api/api";
 import heartIcon from "../images/icons/ic_heart.svg";
 
-function AllItemList() {
+function AllItemList({ filter }) {
   const [products, setProducts] = useState([]);
 
   const getProductsList = async (options) => {
@@ -11,8 +11,9 @@ function AllItemList() {
   };
 
   useEffect(() => {
-    getProductsList({ page: 1, pageSize: 10, orderBy: "recent" });
-  }, []);
+    const orderBy = filter === "favorite" ? "favorite" : "recent"
+    getProductsList({ page: 1, pageSize: 10, orderBy });
+  }, [filter]);
 
   return (
     <div className="all-item-list-container">
