@@ -14,7 +14,6 @@
 
 .best-item-list-container {
   display: flex;
-  flex-direction: row;
   column-gap: 24px;
 }
 
@@ -28,6 +27,7 @@
   font-weight: 500;
   line-height: 16px;
   color: #1f2937;
+  padding-top: 16px;
 }
 
 .best-item-list-price {

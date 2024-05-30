@@ -1,3 +1,4 @@
+import AllItem from "../components/AllItem";
 import BestItem from "../components/BestItem";
 import Header from "../components/Header";
 
@@ -6,6 +7,7 @@ function MainPage() {
     <>
       <Header />
       <BestItem />
+      <AllItem />
     </>
   );
 }
