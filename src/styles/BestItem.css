@@ -15,6 +15,7 @@
 .best-item-list-container {
   display: flex;
   column-gap: 24px;
+  justify-content: center;
 }
 
 .best-item-list-wrapper {
@@ -47,4 +48,28 @@
   font-size: 12px;
   font-weight: 500;
   color: #4b5563;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .best-item-container {
+    padding: 24px 24px 0;
+    margin: 0 auto;
+  }
+
+  .best-item-image {
+    width: 336px;
+    height: 336px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .best-item-container {
+    padding: 16px 16px 0;
+    margin: 0 auto;
+  }
+
+  .best-item-image {
+    width: 343px;
+    height: 343px;
+  }
 }

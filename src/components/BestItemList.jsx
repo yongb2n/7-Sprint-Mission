@@ -3,8 +3,9 @@ import heartIcon from "../images/icons/ic_heart.svg";
 import { getProducts } from "../api/api";
 import "../styles/BestItem.css";
 
-function BestItemList() {
+function BestItemList({ isDesktop, isTablet, isMobile }) {
   const [products, setProducts] = useState([]);
+  const itemsToShow = isDesktop ? 4 : isTablet ? 2 : isMobile ? 1 : 4;
 
   const getProductsList = async (options) => {
     const { list } = await getProducts(options);
@@ -17,9 +18,10 @@ function BestItemList() {
 
   return (
     <div className="best-item-list-container">
-      {products.map((product) => (
-        <div key={product.id} className="best-item-list-wrapper">
+      {products.slice(0, itemsToShow).map((product) => (
+        <div className="best-item-list-wrapper" key={product.id}>
           <img
+            className="best-item-image"
             src={product.images}
             alt={product.name}
             width="282"
