@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import logoImage from "../images/logo/logo.svg";
+import mobileLogoImage from "../images/logo/mobile-logo.svg";
 import "../styles/Header.css";
 
 function Header() {
@@ -7,7 +8,10 @@ function Header() {
     <header className="header-container">
       <h1>
         <Link to="/">
-          <img className="header-logo" src={logoImage} alt="판다마켓" />
+          <picture>
+            <source media="(max-width: 767px)" srcSet={mobileLogoImage} />
+            <img className="header-logo" src={logoImage} alt="판다마켓" />
+          </picture>
         </Link>
       </h1>
       <div className="header-list-wrapper">
