@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { getProducts } from "../api/api";
 import heartIcon from "../images/icons/ic_heart.svg";
 
-function AllItemList({ filter }) {
+function AllItemList({ page, filter, isDesktop, isTablet, isMobile }) {
   const [products, setProducts] = useState([]);
+  const itemsToShow = isDesktop ? 10 : isTablet ? 6 : isMobile ? 4 : 10;
 
   const getProductsList = async (options) => {
     const { list } = await getProducts(options);
@@ -11,15 +12,16 @@ function AllItemList({ filter }) {
   };
 
   useEffect(() => {
-    const orderBy = filter === "favorite" ? "favorite" : "recent"
-    getProductsList({ page: 1, pageSize: 10, orderBy });
-  }, [filter]);
+    const orderBy = filter === "favorite" ? "favorite" : "recent";
+    getProductsList({ page: page, pageSize: itemsToShow, orderBy });
+  }, [page, itemsToShow, filter]);
 
   return (
     <div className="all-item-list-container">
-      {products.map((product) => (
+      {products.slice(0, itemsToShow).map((product) => (
         <div key={product.id} className="all-item-list-wrapper">
           <img
+            className="all-item-image"
             src={product.images}
             alt={product.name}
             width="221"
@@ -27,7 +29,6 @@ function AllItemList({ filter }) {
           />
           <span className="all-item-list-title">{product.name}</span>
           <strong className="all-item-list-price">
-            {" "}
             {Number(product.price).toLocaleString()}원
           </strong>
           <div className="all-item-list-like-wrapper">
