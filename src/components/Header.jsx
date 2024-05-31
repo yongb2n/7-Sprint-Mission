@@ -18,7 +18,7 @@ function Header() {
         <NavLink to="/comunity" className="header-list">
           자유게시판
         </NavLink>
-        <NavLink to="/items" className="header-list">
+        <NavLink to="/items" className="header-list header-list-market">
           중고마켓
         </NavLink>
       </div>

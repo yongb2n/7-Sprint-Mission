@@ -31,6 +31,10 @@
   color: #4b5563;
 }
 
+.header-list-market {
+  color: #3692ff;
+}
+
 .header-login-button {
   background-color: #3692ff;
   color: #fff;
@@ -51,6 +55,19 @@
 @media screen and (max-width: 767px) {
   .header-container {
     padding: 0 16px;
+    column-gap: 15px;
+  }
+
+  .header-list-wrapper {
+    column-gap: 8px;
+  }
+
+  .header-list {
+    display: inline-block;
+  }
+
+  .header-login-button {
+    display: inline-block;
   }
 
   .header-list {
