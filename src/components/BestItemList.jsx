@@ -7,7 +7,14 @@ import useResponsive from "../hooks/useResponsive";
 function BestItemList() {
   const [products, setProducts] = useState([]);
   const { isDesktop, isTablet, isMobile } = useResponsive();
-  const itemsToShow = isDesktop ? 4 : isTablet ? 2 : isMobile ? 1 : 4;
+  const breakpoints = { desktop: 4, tablet: 2, mobile: 1 };
+  const itemsToShow = isDesktop
+    ? breakpoints.desktop
+    : isTablet
+    ? breakpoints.tablet
+    : isMobile
+    ? breakpoints.mobile
+    : breakpoints.desktop;
 
   const getProductsList = async (options) => {
     const { list } = await getProducts(options);
