@@ -3,7 +3,6 @@ import Dropdown from "./Dropdown";
 import "../styles/AllItem.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import useMediaQuery from "../hooks/useMediaQuery";
 import Pagination from "./Pagination";
 import useResponsive from "../hooks/useResponsive";
 
