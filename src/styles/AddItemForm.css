@@ -38,6 +38,10 @@
   padding-bottom: 12px;
 }
 
+.add-item-image-input-file-wrapper {
+  display: flex;
+}
+
 .add-item-image-input {
   width: 282px;
   height: 282px;
@@ -63,6 +67,31 @@
   font-size: 16px;
   font-weight: 400;
   color: #9ca3af;
+}
+
+.add-item-image-input-preview-wrapper {
+  display: flex;
+  position: relative;
+
+}
+
+.add-item-image-input-preview {
+  object-fit: contain;
+  margin-left: 24px;
+  border-radius: 12px;
+}
+
+.add-item-image-input-cancel-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #3962ff;
+  border-radius: 99px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .add-item-title-input-wrapper {

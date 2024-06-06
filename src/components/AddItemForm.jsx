@@ -1,22 +1,17 @@
 import "../styles/AddItemForm.css";
-import plusIcon from "../images/icons/ic_plus.svg";
+import FileInput from "./FileInput";
 
 function AddItemForm() {
   return (
     <div className="add-item-container">
       <div className="add-item-wrapper">
         <label className="add-item-register">상품 등록하기</label>
-        <button className="add-item-register-button">등록</button>
+        <button className="add-item-register-button" disabled>
+          등록
+        </button>
       </div>
 
-      <div className="add-item-image-input-wrapper">
-        <label className="add-item-image-input-label">상품 이미지</label>
-        <div className="add-item-image-input">
-          <img src={plusIcon} alt="이미지 등록" width="48" height="48" />
-          <span className="add-item-image-input-icon-label">이미지 등록</span>
-        </div>
-        <input className="add-item-image-input-none" />
-      </div>
+      <FileInput />
 
       <div className="add-item-title-input-wrapper">
         <label className="add-item-title-input-label">상품명</label>
