@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import "../styles/AddItemForm.css";
 import plusIcon from "../images/icons/ic_plus.svg";
-import cancleIcon from "../images/icons/ic_x.svg";
+import CancelIcon from "../images/icons/ic_x.svg";
 
 function FileInput() {
   const [value, setValue] = useState();
@@ -17,7 +17,7 @@ function FileInput() {
     setValue(nextValue);
   };
 
-  const handleCancleClick = (e) => {
+  const handleCancelClick = (e) => {
     setPreview(null);
   };
 
@@ -48,11 +48,11 @@ function FileInput() {
             />
             <button
               className="add-item-image-input-cancel-button"
-              onClick={handleCancleClick}
+              onClick={handleCancelClick}
             >
               <img
                 className="add-item-image-input-cancel-image"
-                src={cancleIcon}
+                src={CancelIcon}
                 alt="이미지 삭제"
                 width="8"
                 height="8"
