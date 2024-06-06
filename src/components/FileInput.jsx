@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import "../styles/AddItemForm.css";
+import "../styles/FileInput.css";
 import plusIcon from "../images/icons/ic_plus.svg";
 import CancelIcon from "../images/icons/ic_x.svg";
 
@@ -12,7 +12,7 @@ function FileInput() {
     fileInputRef.current.click();
   };
 
-  const handleInputChange = (e) => {
+  const handlefileInputChange = (e) => {
     const nextValue = e.target.files[0];
     setValue(nextValue);
   };
@@ -65,7 +65,8 @@ function FileInput() {
       <input
         className="add-item-image-input-none"
         type="file"
-        onChange={handleInputChange}
+        name="file"
+        onChange={handlefileInputChange}
         ref={fileInputRef}
       />
     </div>

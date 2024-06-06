@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/AddItemForm.css";
+import "../styles/TagInput.css";
 import CancelIcon from "../images/icons/ic_x.svg";
 
 function TagInput() {
@@ -33,6 +33,7 @@ function TagInput() {
       <input
         className="add-item-tag-input"
         placeholder="태그를 입력해주세요"
+        name="tag"
         value={tagValue}
         onChange={handleTagChange}
         onKeyUp={handleTagKeyUp}

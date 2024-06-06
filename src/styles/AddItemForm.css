@@ -26,73 +26,6 @@
   font-weight: 600;
 }
 
-.add-item-image-input-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.add-item-image-input-label {
-  font-size: 18px;
-  font-weight: 700;
-  color: #1f2937;
-  padding-bottom: 12px;
-}
-
-.add-item-image-input-file-wrapper {
-  display: flex;
-}
-
-.add-item-image-input {
-  width: 282px;
-  height: 282px;
-  border-radius: 12px;
-  background-color: #f3f4f6;
-  border: none;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
-.add-item-image-input-none {
-  width: 282px;
-  height: 282px;
-  border-radius: 12px;
-  background-color: #f3f4f6;
-  border: none;
-  display: none;
-}
-
-.add-item-image-input-icon-label {
-  font-size: 16px;
-  font-weight: 400;
-  color: #9ca3af;
-}
-
-.add-item-image-input-preview-wrapper {
-  display: flex;
-  position: relative;
-}
-
-.add-item-image-input-preview {
-  object-fit: contain;
-  margin-left: 24px;
-  border-radius: 12px;
-}
-
-.add-item-image-input-cancel-button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background-color: #3962ff;
-  border-radius: 99px;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .add-item-title-input-wrapper {
   padding: 12px 0;
   display: flex;
@@ -174,60 +107,14 @@
   color: #9ca3af;
 }
 
-.add-item-tag-input-wrapper {
-  padding: 12px 0;
-  display: flex;
-  flex-direction: column;
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .add-item-container {
+    padding: 16px 24px;
+  }
 }
 
-.add-item-tag-input-label {
-  font-size: 18px;
-  font-weight: 700;
-  color: #1f2937;
-  padding-bottom: 12px;
-}
-
-.add-item-tag-input {
-  height: 56px;
-  border-radius: 12px;
-  border: none;
-  background-color: #f3f4f6;
-  padding-left: 24px;
-}
-
-.add-item-tag-input::placeholder {
-  font-size: 16px;
-  font-weight: 400;
-  color: #9ca3af;
-}
-
-.add-item-tag-wrapper {
-  display: flex;
-  padding-top: 12px;
-}
-
-.add-item-tag {
-  padding: 12px 12px 12px 16px;
-  border-radius: 26px;
-  column-gap: 10px;
-  background-color: #f9fafb;
-  display: flex;
-  text-align: center;
-  margin-right: 12px;
-}
-
-.add-item-tag-span {
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-}
-
-.add-item-tag-button {
-  border-radius: 999px;
-  background-color: #9ca3af;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media screen and (max-width: 767px) {
+  .add-item-container {
+    padding: 16px;
+  }
 }
