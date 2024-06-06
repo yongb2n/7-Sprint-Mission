@@ -1,5 +1,6 @@
 import "../styles/AddItemForm.css";
 import FileInput from "./FileInput";
+import TagInput from "./TagInput";
 
 function AddItemForm() {
   return (
@@ -37,13 +38,7 @@ function AddItemForm() {
         />
       </div>
 
-      <div className="add-item-tag-input-wrapper">
-        <label className="add-item-tag-input-label">태그</label>
-        <input
-          className="add-item-tag-input"
-          placeholder="태그를 입력해주세요"
-        />
-      </div>
+      <TagInput />
     </div>
   );
 }

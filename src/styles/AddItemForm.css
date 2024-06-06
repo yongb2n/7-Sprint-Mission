@@ -72,7 +72,6 @@
 .add-item-image-input-preview-wrapper {
   display: flex;
   position: relative;
-
 }
 
 .add-item-image-input-preview {
@@ -200,4 +199,35 @@
   font-size: 16px;
   font-weight: 400;
   color: #9ca3af;
+}
+
+.add-item-tag-wrapper {
+  display: flex;
+  padding-top: 12px;
+}
+
+.add-item-tag {
+  padding: 12px 12px 12px 16px;
+  border-radius: 26px;
+  column-gap: 10px;
+  background-color: #f9fafb;
+  display: flex;
+  text-align: center;
+  margin-right: 12px;
+}
+
+.add-item-tag-span {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.add-item-tag-button {
+  border-radius: 999px;
+  background-color: #9ca3af;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
