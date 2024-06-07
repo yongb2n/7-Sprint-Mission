@@ -51,7 +51,6 @@ function FileInput() {
               onClick={handleCancelClick}
             >
               <img
-                className="add-item-image-input-cancel-image"
                 src={CancelIcon}
                 alt="이미지 삭제"
                 width="8"
