@@ -33,9 +33,7 @@ function AddItemForm() {
           등록
         </button>
       </div>
-
       <FileInput />
-
       <div className="add-item-title-input-wrapper">
         <label className="add-item-title-input-label">상품명</label>
         <input
@@ -46,7 +44,6 @@ function AddItemForm() {
           onChange={handleInputChange}
         />
       </div>
-
       <div className="add-item-description-textarea-wrapper">
         <label className="add-item-description-textarea-label">상품 소개</label>
         <textarea
@@ -57,7 +54,6 @@ function AddItemForm() {
           onChange={handleInputChange}
         />
       </div>
-
       <div className="add-item-price-input-wrapper">
         <label className="add-item-price-input-label">판매 가격</label>
         <input
@@ -68,7 +64,6 @@ function AddItemForm() {
           onChange={handleInputChange}
         />
       </div>
-
       <TagInput />
     </div>
   );
