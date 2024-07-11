@@ -1,8 +1,9 @@
-import styles from "@/styles/styles.module.css";
+import Header from "@/components/Header";
+
 export default function Home() {
   return (
     <>
-      
+      <Header/>
     </>
   );
 }
