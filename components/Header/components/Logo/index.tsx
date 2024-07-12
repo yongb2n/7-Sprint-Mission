@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/public/assets/icons/logo/logo.svg";
-import mobileLogo from "@/public/assets/icons/logo/mobile-logo.svg";
+import logo from "@/assets/icons/logo/logo.svg";
+import mobileLogo from "@/assets/icons/logo/mobile-logo.svg";
 import debounce from "lodash-es/debounce";
 
 function Logo() {

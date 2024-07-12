@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import loginIcon from "@/public/assets/icons/login-icon.svg";
+import loginIcon from "@/assets/icons/ic_profile.svg";
 import styles from "./styles.module.scss";
 
 function ProfileImage() {
