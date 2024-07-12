@@ -1,0 +1,79 @@
+@import "@/styles/import.scss";
+
+.container {
+  width: 384px;
+  height: 169px;
+  border-radius: 8px;
+  background-color: $color-board-card-background;
+  margin-top: 24px;
+}
+
+.best-badge {
+  width: 102px;
+  height: 30px;
+  margin-left: 24px;
+}
+
+.wrapper {
+  padding: 16px 24px 16px;
+}
+
+.best-post-title-container {
+  @include Flex(row, space-between, top);
+}
+
+.title {
+  @include Font(20px, 600, $color-gray-800);
+  width: 256px;
+  height: 48px;
+}
+
+.post-image-container {
+  @include Flex(row, center, center);
+  width: 72px;
+  height: 72px;
+  border-radius: 6px;
+  border: 1px solid $color-gray-200;
+  background-color: $color-white;
+}
+
+.post-image {
+  width: 48px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.post-user-container {
+  @include Flex(row, space-between, center);
+  padding-top: 18px;
+}
+
+.post-user-like {
+  @include Flex(row, space-between, center);
+
+  .user-name {
+    @include Font(14px, 400, $color-gray-600);
+    margin-right: 8px;
+  }
+}
+
+.like-wrapper {
+  @include Flex(row, space-between, center);
+}
+
+.like-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.like-count {
+  width: 15px;
+  height: 17px;
+  @include Flex(row, center, center);
+  @include Font(14px, 400, $color-gray-500);
+  margin-left: 4px;
+}
+
+.date {
+  @include Font(14px, 400, $color-gray-400);
+}
