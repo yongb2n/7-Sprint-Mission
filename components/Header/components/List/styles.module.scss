@@ -1,0 +1,26 @@
+@import "@/styles/import.scss";
+
+.item {
+  column-gap: 41px;
+  display: flex;
+  flex-grow: 1;
+}
+
+.item-list {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21px;
+  text-align: center;
+  color: #4b5563;
+  text-decoration: none;
+}
+
+@media screen and (max-width: $width-max-mobile) {
+  .item {
+    column-gap: 8px;
+  }
+
+  .item-list {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,57 @@
+@import "@/styles/import.scss";
+
+.container {
+  max-width: 1920px;
+  padding: 0 360px;
+}
+
+.all-post-top-header {
+  @include Flex(row, space-between, center);
+  padding-bottom: 24px;
+
+  .title {
+    @include Font(20px, 700, $color-gray-900);
+  }
+
+  .button {
+    width: 88px;
+    height: 42px;
+    border-radius: 8px;
+    padding: 12px 23px;
+    @include Font(16px, 600, $color-white);
+    background-color: #3692ff;
+  }
+}
+
+.all-post-bottom-header {
+  @include Flex(row, space-between, center); 
+}
+
+.search-container {
+  position: relative;
+  width: 1054px;
+  height: 42px;
+
+  .search {
+    width: 100%;
+    height: 100%;
+    padding: 12px 40px 12px 12px; 
+    background-color: $color-gray-100;
+    border-radius: 12px;
+  }
+
+  .search::placeholder {
+    @include Font(16px, 400, $color-gray-400);
+    width: 174px;
+    height: 24px;
+  }
+
+  .search-icon {
+    position: absolute;
+    right: 12px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+  }
+}
