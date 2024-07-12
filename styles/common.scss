@@ -1,0 +1,9 @@
+$width-max-tablet: 1199px;
+$width-max-mobile: 767px;
+
+@mixin Flex($col, $justifyContent, $alignItems) {
+  display: flex;
+  flex-direction: $col;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}

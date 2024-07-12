@@ -1,9 +1,7 @@
-@import '@/styles/import.scss';
+@import "@/styles/import.scss";
 
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include Flex(row, space-between, center);
   width: 100%;
   column-gap: 47px;
   padding: 0 200px;
@@ -11,72 +9,19 @@
   position: sticky;
   top: 0;
   border-bottom: 1px solid #dfdfdf;
-  background-color: #fff;
+  background-color: $color-white;
   z-index: 999;
 }
 
-.logo {
-  width: 153px;
-  height: 51px;
-}
-
-.item {
-  column-gap: 41px;
-  display: flex;
-  flex-grow: 1;
-}
-
-.item-list {
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 21px;
-  text-align: center;
-  color: #4b5563;
-  text-decoration: none;
-}
-
-.login-button {
-  background-color: #3692ff;
-  color: #fff;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
-  padding: 12px 20px;
-  border-radius: 8px;
-  gap: 10px;
-  text-decoration: none;
-}
-
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (max-width: $width-max-tablet) {
   .container {
     padding: 0 34px;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: $width-max-mobile) {
   .container {
     padding: 0 16px;
     column-gap: 15px;
-  }
-
-  .item {
-    column-gap: 8px;
-  }
-
-  .item-list {
-    display: inline-block;
-  }
-
-  .login-button {
-    display: inline-block;
-  }
-
-  .header-list {
-    font-size: 16px;
-  }
-
-  .logo {
-    width: auto;
-    height: auto;
   }
 }
