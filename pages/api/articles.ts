@@ -1,5 +1,3 @@
-// api/articles.ts
-
 import axiosInstance from "./axiosInstance";
 
 interface Writer {
@@ -25,7 +23,7 @@ interface ApiResponse {
 
 export async function getArticles({
   page = 1,
-  pageSize = 3,
+  pageSize = 10,
   orderBy = "recent",
   keyword = "",
 }: {
