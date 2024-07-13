@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./styles.module.scss";
-import laptop from "@/assets/images/img_laptop.png";
 import heartIcon from "@/assets/icons/ic_heart.svg";
 import profileImage from "@/assets/icons/ic_profile.svg";
 import { Article } from "@/pages/api/articles";
