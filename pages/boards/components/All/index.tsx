@@ -59,7 +59,7 @@ function All() {
           <input
             type="text"
             className={styles["search"]}
-            placeholder="검색할 상품을 입력해주세요"
+            placeholder="검색할 키워드를 입력해주세요"
             value={search}
             onChange={handleSearchChange}
           />
