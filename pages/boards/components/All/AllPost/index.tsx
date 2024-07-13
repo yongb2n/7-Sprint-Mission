@@ -20,8 +20,8 @@ function AllPost({ article }: AllPostProps) {
             <Image
               src={article.image}
               alt={article.title}
-              width={48}
-              height={44}
+              width={46}
+              height={46}
             />
           </div>
         )}

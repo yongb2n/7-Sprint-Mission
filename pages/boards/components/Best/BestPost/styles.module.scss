@@ -34,7 +34,6 @@
 }
 
 .post-image {
-  @include Size(48px, 44px);
   object-fit: contain;
 }
 
@@ -71,4 +70,15 @@
 
 .date {
   @include Font(14px, 400, $color-gray-400);
+}
+
+@media screen and (max-width: $width-max-tablet) {
+  .container {
+    width: 100%;
+  }
+
+  .post-user-container {
+    @include Size(90%, 17px);
+    @include Flex("", space-between, "");
+  }
 }

@@ -59,3 +59,12 @@
     }
   }
 }
+@media screen and (max-width: $width-max-tablet) {
+  .container {
+    width: 100%;
+  }
+
+  .image-wrapper {
+    min-width: 72px;
+  }
+}
