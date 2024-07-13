@@ -2,6 +2,7 @@ import Image from "next/image";
 import Dropdown from "./Dropdown";
 import styles from "./styles.module.scss";
 import searchIcon from "@/assets/icons/ic_search.svg";
+import AllPost from "./AllPost";
 
 function All() {
   const options = ["최신순", "좋아요순"];
@@ -26,10 +27,14 @@ function All() {
             className={styles["search"]}
             placeholder="검색할 상품을 입력해주세요"
           />
-         
         </div>
         <Dropdown options={options} defaultOption="최신순" />
       </div>
+      <AllPost />
+      <AllPost />
+      <AllPost />
+      <AllPost />
+      <AllPost />
     </div>
   );
 }
