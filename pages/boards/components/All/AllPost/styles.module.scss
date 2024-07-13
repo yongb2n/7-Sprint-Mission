@@ -68,3 +68,9 @@
     min-width: 72px;
   }
 }
+
+@media screen and (max-width: $width-max-mobile) {
+  .post-top-info .title {
+    @include Font(18px, 600, $color-gray-800);
+  }
+}

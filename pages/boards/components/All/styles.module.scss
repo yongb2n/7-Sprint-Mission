@@ -41,7 +41,7 @@
 
   .search::placeholder {
     @include Font(16px, 400, $color-gray-400);
-    @include Size(174px, 24px);
+    @include Size(202px, 24px);
   }
 
   .search-icon {
