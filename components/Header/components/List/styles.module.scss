@@ -7,11 +7,9 @@
 }
 
 .item-list {
-  font-size: 18px;
-  font-weight: 700;
+  @include Font(18px, 700, $color-gray-600);
   line-height: 21px;
   text-align: center;
-  color: #4b5563;
   text-decoration: none;
 }
 

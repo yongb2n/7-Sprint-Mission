@@ -2,10 +2,9 @@
 
 .container {
   @include Flex(row, space-between, center);
-  width: 100%;
+  @include Size(100%, 70px);
   column-gap: 47px;
   padding: 0 200px;
-  height: 70px;
   position: sticky;
   top: 0;
   border-bottom: 1px solid #dfdfdf;

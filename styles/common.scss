@@ -13,3 +13,8 @@ $width-max-mobile: 767px;
   font-weight: $font-weight;
   color: $color;
 }
+
+@mixin Size($width, $height) {
+  width: $width;
+  height: $height;
+}

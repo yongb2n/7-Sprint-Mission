@@ -14,12 +14,11 @@
   }
 
   .button {
-    width: 88px;
-    height: 42px;
+    @include Size(88px, 42px);
+    @include Font(16px, 600, $color-white);
     border-radius: 8px;
     padding: 12px 23px;
-    @include Font(16px, 600, $color-white);
-    background-color: #3692ff;
+    background-color: $color-write-button;
   }
 }
 
@@ -29,12 +28,10 @@
 
 .search-container {
   position: relative;
-  width: 1054px;
-  height: 42px;
+  @include Size(1054px, 42px);
 
   .search {
-    width: 100%;
-    height: 100%;
+    @include Size(100%, 100%);
     padding: 12px 44px;
     background-color: $color-gray-100;
     border-radius: 12px;
@@ -42,16 +39,14 @@
 
   .search::placeholder {
     @include Font(16px, 400, $color-gray-400);
-    width: 174px;
-    height: 24px;
+    @include Size(174px, 24px);
   }
 
   .search-icon {
+    @include Size(24px, 24px);
     position: absolute;
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
-    width: 24px;
-    height: 24px;
   }
 }

@@ -1,8 +1,7 @@
 @import "@/styles/import.scss";
 
 .container {
-  width: 384px;
-  height: 169px;
+  @include Size(384px, 169px);
   border-radius: 8px;
   background-color: $color-board-card-background;
   margin-top: 24px;
@@ -23,29 +22,25 @@
 
 .title {
   @include Font(20px, 600, $color-gray-800);
-  width: 256px;
-  height: 48px;
+  @include Size(256px, 48px);
 }
 
 .post-image-container {
   @include Flex(row, center, center);
-  width: 72px;
-  height: 72px;
+  @include Size(72px, 72px);
   border-radius: 6px;
   border: 1px solid $color-gray-200;
   background-color: $color-white;
 }
 
 .post-image {
-  width: 48px;
-  height: 44px;
+  @include Size(48px, 44px);
   object-fit: contain;
 }
 
 .post-user-container {
   @include Flex(row, space-between, center);
-  width: 336px;
-  height: 17px;
+  @include Size(336px, 17px);
   position: absolute;
   bottom: 16px;
 }
@@ -64,13 +59,11 @@
 }
 
 .like-icon {
-  width: 16px;
-  height: 16px;
+  @include Size(16px, 16px);
 }
 
 .like-count {
-  width: 15px;
-  height: 17px;
+  @include Size(15px, 17px);
   @include Flex(row, center, center);
   @include Font(14px, 400, $color-gray-500);
   margin-left: 4px;

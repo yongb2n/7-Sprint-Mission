@@ -1,8 +1,7 @@
 @import "@/styles/import.scss";
 
 .logo {
-  width: 153px;
-  height: 51px;
+  @include Size(153px, 51px);
 }
 
 @media screen and (max-width: $width-max-mobile) {
@@ -24,7 +23,6 @@
   }
 
   .logo {
-    width: auto;
-    height: auto;
+    @include Size(auto, auto);
   }
 }
