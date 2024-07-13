@@ -4,25 +4,17 @@
   @include Size(153px, 51px);
 }
 
+.mobile-logo {
+  @include Size(81px, 40px);
+  display: none;
+}
+
 @media screen and (max-width: $width-max-mobile) {
-  .container {
-    padding: 0 16px;
-    column-gap: 15px;
-  }
-
-  .item {
-    column-gap: 8px;
-  }
-
-  .item-list {
-    display: inline-block;
-  }
-
-  .header-list {
-    font-size: 16px;
-  }
-
   .logo {
-    @include Size(auto, auto);
+    display: none;
+  }
+
+  .mobile-logo {
+    display: block;
   }
 }
