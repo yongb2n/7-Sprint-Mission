@@ -30,14 +30,15 @@
 .dropdownList {
   position: absolute;
   top: 100%;
-  left: 0; 
+  left: 0;
   border: 1px solid #e5e7eb;
   border-radius: 12px 12px 12px 12px;
   background-color: #fff;
   text-align: center;
-  padding: 7px 44px;
+  padding: 8px 0;
   width: 130px;
-  height: 84px;
+  height: auto;
+  @include Flex(column, center, center);
 }
 
 .dropdownListItem {
@@ -45,6 +46,7 @@
   font-size: 16px;
   font-weight: 400;
   color: #1f2937;
+  line-height: 26px;
   width: 56px;
   height: 26px;
 }

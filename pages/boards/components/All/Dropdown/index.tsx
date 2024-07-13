@@ -6,9 +6,10 @@ import arrowIcon from "@/assets/icons/ic_arrow_down.svg";
 interface DropdownProps {
   options: string[];
   defaultOption: string;
+  onChange: (option: string) => void;
 }
 
-const Dropdown = ({ options, defaultOption }: DropdownProps) => {
+const Dropdown = ({ options, defaultOption, onChange }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(defaultOption);
 
@@ -17,6 +18,7 @@ const Dropdown = ({ options, defaultOption }: DropdownProps) => {
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);
     setIsOpen(false);
+    onChange(option);
   };
 
   return (
