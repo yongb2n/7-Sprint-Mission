@@ -6,12 +6,20 @@ import Comment from "./components/Comment";
 import backIcon from "@/assets/icons/ic_back.svg";
 import NotComment from "./components/NotComment";
 import styles from "./styles.module.scss";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import {
+  getArticleById,
+  getArticleComments,
+  Article,
+} from "@/pages/api/articles";
 
 function BoardsDetail() {
   const [textAreaValue, setTextAreaValue] = useState<string>("");
+  const [article, setArticle] = useState<Article | undefined>(undefined);
+  const [comments, setComments] = useState<Article[]>([]);
   const router = useRouter();
+  const { id } = router.query;
 
   const handleTextAreaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setTextAreaValue(event.target.value);
@@ -21,13 +29,37 @@ function BoardsDetail() {
     router.push("/boards");
   };
 
+  useEffect(() => {
+    const fetchArticle = async () => {
+      try {
+        const fetchedArticle = await getArticleById(id);
+        setArticle(fetchedArticle);
+
+        const params = {
+          articleId: id,
+          limit: 10,
+        };
+
+        const { list } = await getArticleComments(params);
+        setComments(list);
+      } catch (error) {
+        console.error("데이터를 불러오는데 실패했습니다..!", error);
+      }
+    };
+
+    if (id) {
+      fetchArticle();
+    }
+  }, [id]);
+
+  if (!article) {
+    return <div>게시글이 없습니다..!</div>;
+  }
   return (
     <div className={styles["container"]}>
       <div className={styles["wrapper"]}>
         <div className={styles["title-container"]}>
-          <p className={styles["title"]}>
-            맥북 16인치 16기가 1테라 정도 사양이면 얼마에 팔아야 하나요?
-          </p>
+          <p className={styles["title"]}>{article.title}</p>
           <Image src={kebabIcon} alt="케밥 아이콘" width={24} height={24} />
         </div>
 
@@ -40,18 +72,20 @@ function BoardsDetail() {
               width={24}
               height={24}
             />
-            <span className={styles["user-name"]}>총명한 판다</span>
-            <span className={styles["date"]}>2024. 01. 02</span>
+            <span className={styles["user-name"]}>
+              {article.writer.nickname}
+            </span>
+            <span className={styles["date"]}>
+              {new Date(article.createdAt).toLocaleDateString()}
+            </span>
           </div>
           <div className={styles["like-wrapper"]}>
             <Image src={likeIcon} alt="좋아요" width={24} height={24} />
-            <span className={styles["like-count"]}>123</span>
+            <span className={styles["like-count"]}>{article.likeCount}</span>
           </div>
         </div>
       </div>
-      <p className={styles["description"]}>
-        맥북 16인치 16기가 1테라 정도 사양이면 얼마에 팔아야 하나요?
-      </p>
+      <p className={styles["description"]}>{article.content}</p>
 
       <div className={styles["comment-container"]}>
         <label className={styles["comment"]} htmlFor="comment">
@@ -75,11 +109,11 @@ function BoardsDetail() {
         </div>
       </div>
 
-      <Comment />
-      <Comment />
-      <Comment />
+      {comments.map((comment) => (
+        <Comment key={comment.id} comment={comment} />
+      ))}
 
-      {/*  <NotComment /> */}
+      {comments.length === 0 && <NotComment />}
 
       <div className={styles["back-button-container"]}>
         <button
