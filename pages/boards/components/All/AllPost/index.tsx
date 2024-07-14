@@ -3,15 +3,21 @@ import styles from "./styles.module.scss";
 import heartIcon from "@/assets/icons/ic_heart.svg";
 import profileImage from "@/assets/icons/ic_profile.svg";
 import { Article } from "@/pages/api/articles";
+import { useRouter } from "next/router";
 interface AllPostProps {
   article: Article;
 }
 
 function AllPost({ article }: AllPostProps) {
   const hasImage = !!article.image;
+  const router = useRouter();
+
+  const handlePostClick = () => {
+    router.push(`/boards/${article.id}`);
+  };
 
   return (
-    <div className={styles["container"]}>
+    <div className={styles["container"]} onClick={handlePostClick}>
       <div className={styles["post-top-info"]}>
         <p className={styles["title"]}>{article.title}</p>
         {hasImage && (

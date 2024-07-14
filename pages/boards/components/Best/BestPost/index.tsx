@@ -3,13 +3,20 @@ import styles from "./styles.module.scss";
 import heartIcon from "@/assets/icons/ic_heart.svg";
 import { Article } from "@/pages/api/articles";
 import bestBadge from "@/assets/images/img_badge.png";
+import { useRouter } from "next/router";
 interface BestPostProps {
   article: Article;
 }
 
 function BestPost({ article }: BestPostProps) {
+  const router = useRouter();
+
+  const handlePostClick = () => {
+    router.push(`/boards/${article.id}`);
+  };
+
   return (
-    <div className={styles["container"]}>
+    <div className={styles["container"]} onClick={handlePostClick}>
       <Image
         className={styles["best-badge"]}
         src={bestBadge}
