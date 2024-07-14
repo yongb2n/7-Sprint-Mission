@@ -57,7 +57,7 @@ function All() {
             height={24}
           />
           <input
-            type="text"
+            type="search"
             className={styles["search"]}
             placeholder="검색할 키워드를 입력해주세요"
             value={search}
