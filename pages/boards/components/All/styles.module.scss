@@ -19,7 +19,7 @@
     @include Font(16px, 600, $color-white);
     border-radius: 8px;
     padding: 12px 23px;
-    background-color: $color-write-button;
+    background-color: $color-blue-button;
   }
 }
 
@@ -52,6 +52,7 @@
     transform: translateY(-50%);
   }
 }
+
 @media screen and (max-width: $width-max-tablet) {
   .all-post-top-header {
     width: 100%;
