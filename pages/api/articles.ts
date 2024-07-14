@@ -39,21 +39,22 @@ export async function getArticles({
   return response.data as ApiResponse;
 }
 
-export async function getArticleId({
-  articleId,
-}: {
-  articleId: number;
-}): Promise<Article> {
+export async function getArticleById(articleId: number): Promise<Article> {
   const response = await axiosInstance.get(`/articles/${articleId}`);
   return response.data as Article;
 }
 
 export async function getArticleComments({
   articleId,
+  limit,
 }: {
   articleId: number;
+  limit: number;
 }): Promise<ApiResponse> {
-  const query = `articleId=${encodeURIComponent(articleId)}/comments`;
-  const response = await axiosInstance.get(`/articles?${query}`);
+  const response = await axiosInstance.get(`/articles/${articleId}/comments`, {
+    params: {
+      limit,
+    },
+  });
   return response.data as ApiResponse;
 }
