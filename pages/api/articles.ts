@@ -4,7 +4,6 @@ interface Writer {
   nickname: string;
   id: number;
 }
-
 export interface Article {
   id: number;
   title: string;
@@ -15,7 +14,6 @@ export interface Article {
   createdAt: string;
   updatedAt: string;
 }
-
 interface ApiResponse {
   totalCount: number;
   list: Article[];
@@ -37,6 +35,25 @@ export async function getArticles({
   )}&orderBy=${encodeURIComponent(orderBy)}&keyword=${encodeURIComponent(
     keyword || ""
   )}`;
+  const response = await axiosInstance.get(`/articles?${query}`);
+  return response.data as ApiResponse;
+}
+
+export async function getArticleId({
+  articleId,
+}: {
+  articleId: number;
+}): Promise<Article> {
+  const response = await axiosInstance.get(`/articles/${articleId}`);
+  return response.data as Article;
+}
+
+export async function getArticleComments({
+  articleId,
+}: {
+  articleId: number;
+}): Promise<ApiResponse> {
+  const query = `articleId=${encodeURIComponent(articleId)}/comments`;
   const response = await axiosInstance.get(`/articles?${query}`);
   return response.data as ApiResponse;
 }
