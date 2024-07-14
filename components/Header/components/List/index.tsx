@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 function HeaderList() {
   return (
     <div className={styles["item"]}>
-      <Link href="/comunity" className={styles["item-list"]}>
+      <Link href="/boards" className={styles["item-list"]}>
         자유게시판
       </Link>
       <Link href="/items" className={styles["item-list"]}>
