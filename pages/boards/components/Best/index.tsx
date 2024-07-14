@@ -20,7 +20,7 @@ function Best() {
         const { list } = await getArticles(params);
         setArticles(list);
       } catch (error) {
-        console.error("Error fetching articles:", error);
+        console.error("데이터를 불러오는데 실패했습니다..!", error);
       }
     }
 
