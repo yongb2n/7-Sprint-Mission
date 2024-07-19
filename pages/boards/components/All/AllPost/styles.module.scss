@@ -9,6 +9,7 @@
 .post-top-info {
   @include Flex(row, space-between, "");
   padding-bottom: 16px;
+  text-decoration: none;
 
   .title {
     @include Font(20px, 600, $color-gray-800);
