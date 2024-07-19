@@ -18,7 +18,7 @@ function BoardsDetail() {
   const [textAreaValue, setTextAreaValue] = useState<string>("");
   const [article, setArticle] = useState<Article | undefined>(undefined);
   const [comments, setComments] = useState<Article[]>([]);
-  const router = useRouter();
+  const router: any = useRouter();
   const { id } = router.query;
 
   const handleTextAreaChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
