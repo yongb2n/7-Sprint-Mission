@@ -4,6 +4,7 @@ interface Writer {
   nickname: string;
   id: number;
 }
+
 export interface Article {
   id: number;
   title: string;
@@ -14,6 +15,7 @@ export interface Article {
   createdAt: string;
   updatedAt: string;
 }
+
 interface ApiResponse {
   totalCount: number;
   list: Article[];
