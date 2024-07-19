@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./styles.module.scss";
 import heartIcon from "@/assets/icons/ic_heart.svg";
 import { Article } from "@/pages/api/articles";
-import bestBadge from "@/assets/images/img_badge.png";
+import bestBadge from "@/assets/images/img_badge.svg";
 import { useRouter } from "next/router";
 interface BestPostProps {
   article: Article;
