@@ -16,9 +16,9 @@ export interface Article {
   updatedAt: string;
 }
 
-interface ApiResponse {
+interface ApiResponse<T> {
   totalCount: number;
-  list: Article[];
+  list: T[];
 }
 
 export async function getArticles({
@@ -31,14 +31,14 @@ export async function getArticles({
   pageSize?: number;
   orderBy?: string;
   keyword?: string;
-}): Promise<ApiResponse> {
+}): Promise<ApiResponse<Article>> {
   const query = `page=${encodeURIComponent(page)}&pageSize=${encodeURIComponent(
     pageSize
   )}&orderBy=${encodeURIComponent(orderBy)}&keyword=${encodeURIComponent(
     keyword || ""
   )}`;
   const response = await axiosInstance.get(`/articles?${query}`);
-  return response.data as ApiResponse;
+  return response.data as ApiResponse<Article>;
 }
 
 export async function getArticleById(articleId: number): Promise<Article> {
@@ -52,11 +52,11 @@ export async function getArticleComments({
 }: {
   articleId: number;
   limit: number;
-}): Promise<ApiResponse> {
+}): Promise<ApiResponse<Article>> {
   const response = await axiosInstance.get(`/articles/${articleId}/comments`, {
     params: {
       limit,
     },
   });
-  return response.data as ApiResponse;
+  return response.data as ApiResponse<Article>;
 }
