@@ -108,6 +108,24 @@
     top: 189px;
     left: 104px;
   }
+
+  .preview-image-wrapper {
+    position: relative;
+    display: flex;
+
+    .preview-image {
+      @include Size(100%, 100%);
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .preview-image-cancel-button {
+      position: absolute;
+      top: 8px;
+      left: 4px;
+      background: none;
+    }
+  }
 }
 
 @media screen and (max-width: $width-max-tablet) {

@@ -2,12 +2,15 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import plusIcon from "@/assets/icons/ic_plus.svg";
+import cancelIcon from "@/assets/icons/ic_cancel.svg";
 import classNames from "classnames";
 
 function AddBoard() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [titleInputValue, setTitleInputValue] = useState("");
   const [contentTextAreaValue, setContentTextAreaValue] = useState("");
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
+
   const activeButton = titleInputValue && contentTextAreaValue;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,8 +22,26 @@ function AddBoard() {
   };
 
   const handleFileInputClick = () => {
-    if (fileInputRef.current) {
+    if (fileInputRef.current && !previewImage) {
       fileInputRef.current.click();
+    }
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreviewImage(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleImageCancel = () => {
+    setPreviewImage(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
     }
   };
 
@@ -73,6 +94,8 @@ function AddBoard() {
             type="file"
             id="image-upload"
             placeholder="이미지 등록"
+            onChange={handleFileChange}
+            style={{ display: "none" }}
           />
           <Image
             className={styles["plus-image-icon"]}
@@ -82,6 +105,28 @@ function AddBoard() {
             height={48}
           />
           <span className={styles["add-image-span"]}>이미지 등록</span>
+          {previewImage && (
+            <div className={styles["preview-image-wrapper"]}>
+              <Image
+                src={previewImage}
+                alt="미리보기"
+                width={282}
+                height={282}
+                className={styles["preview-image"]}
+              />
+              <button
+                className={styles["preview-image-cancel-button"]}
+                onClick={handleImageCancel}
+              >
+                <Image
+                  src={cancelIcon}
+                  alt="이미지 삭제"
+                  width={20}
+                  height={20}
+                />
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
