@@ -18,6 +18,7 @@
 
 .best-post-title-container {
   @include Flex(row, space-between, top);
+  text-decoration: none;
 }
 
 .title {
