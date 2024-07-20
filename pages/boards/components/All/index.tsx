@@ -5,6 +5,7 @@ import searchIcon from "@/assets/icons/ic_search.svg";
 import AllPost from "./AllPost";
 import { useEffect, useMemo, useState } from "react";
 import { getArticles, Article } from "@/services/articles";
+import Link from "next/link";
 
 function All() {
   const options = ["최신순", "좋아요순"];
@@ -45,7 +46,9 @@ function All() {
     <div className={styles["container"]}>
       <div className={styles["all-post-top-header"]}>
         <label className={styles["title"]}>게시글</label>
-        <button className={styles["button"]}>글쓰기</button>
+        <Link href={`/addboard`}>
+          <button className={styles["button"]}>글쓰기</button>
+        </Link>
       </div>
       <div className={styles["all-post-bottom-header"]}>
         <div className={styles["search-container"]}>
