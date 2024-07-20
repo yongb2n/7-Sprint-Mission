@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import BestPost from "./BestPost";
+import BestPost from "./BestArticleItem";
 import styles from "./styles.module.scss";
 import { getArticles, Article } from "@/pages/api/articles";
 import debounce from "lodash-es/debounce";
