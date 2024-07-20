@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import BestPost from "./BestArticleItem";
 import styles from "./styles.module.scss";
-import { getArticles, Article } from "@/pages/api/articles";
+import { getArticles, Article } from "@/services/articles";
 import debounce from "lodash-es/debounce";
 
 function Best() {

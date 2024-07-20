@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 import searchIcon from "@/assets/icons/ic_search.svg";
 import AllPost from "./AllPost";
 import { useEffect, useMemo, useState } from "react";
-import { getArticles, Article } from "@/pages/api/articles";
+import { getArticles, Article } from "@/services/articles";
 
 function All() {
   const options = ["최신순", "좋아요순"];

@@ -12,7 +12,7 @@ import {
   getArticleById,
   getArticleComments,
   Article,
-} from "@/pages/api/articles";
+} from "@/services/articles";
 
 function BoardsDetail() {
   const [textAreaValue, setTextAreaValue] = useState<string>("");
