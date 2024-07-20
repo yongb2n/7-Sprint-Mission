@@ -26,7 +26,6 @@ function AllPost({ article }: AllPostProps) {
             />
           </div>
         )}
-        {!hasImage && <div className={styles["none-image-wrapper"]}></div>}
       </Link>
       <div className={styles["post-bottom-info"]}>
         <div className={styles["user-wrapper"]}>

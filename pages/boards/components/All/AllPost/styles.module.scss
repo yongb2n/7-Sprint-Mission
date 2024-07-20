@@ -9,6 +9,7 @@
 .post-top-info {
   @include Flex(row, space-between, "");
   padding-bottom: 16px;
+  min-height: 88px;
   text-decoration: none;
 
   .title {
@@ -22,10 +23,6 @@
     border-radius: 8px;
     border: 1px solid $color-gray-200;
     background-color: $color-white;
-  }
-
-  .none-image-wrapper {
-    @include Size(72px, 72px);
   }
 }
 
