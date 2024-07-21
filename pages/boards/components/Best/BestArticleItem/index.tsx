@@ -26,7 +26,7 @@ function BestArticleItem({ article }: BestArticleItemProps) {
           <p className={styles["title"]}>{article.title}</p>
           {article.image && (
             <div className={styles["post-image-container"]}>
-              <Image
+              <img
                 className={styles["post-image"]}
                 src={article.image}
                 alt={article.title}

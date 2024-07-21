@@ -18,7 +18,7 @@ function AllPost({ article }: AllPostProps) {
         <p className={styles["title"]}>{article.title}</p>
         {hasImage && (
           <div className={styles["image-wrapper"]}>
-            <Image
+            <img
               src={article.image}
               alt={article.title}
               width={46}
