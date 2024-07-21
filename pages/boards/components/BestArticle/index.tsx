@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import BestPost from "./BestArticleItem";
-import styles from "./styles.module.scss";
+import styles from "@/pages/boards/components/BestArticle/styles.module.scss";
 import { getArticles, Article, ApiResponse } from "@/services/articles";
 
-function Best() {
+function BestArticle() {
   const [articles, setArticles] = useState<Article[]>([]);
 
   useEffect(() => {
@@ -38,4 +38,4 @@ function Best() {
   );
 }
 
-export default Best;
+export default BestArticle;

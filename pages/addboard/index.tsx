@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
-import styles from "./styles.module.scss";
+import styles from "@/pages/addboard/styles.module.scss";
 import plusIcon from "@/assets/icons/ic_plus.svg";
 import cancelIcon from "@/assets/icons/ic_cancel.svg";
 import classNames from "classnames";

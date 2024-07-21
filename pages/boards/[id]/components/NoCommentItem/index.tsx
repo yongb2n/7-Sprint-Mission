@@ -1,8 +1,8 @@
 import Image from "next/image";
 import replyEmptyImage from "@/assets/images/img_reply_empty.png";
-import styles from "./styles.module.scss";
+import styles from "@/pages/boards/[id]/components/NoCommentItem/styles.module.scss";
 
-function NotCommentItem() {
+function NoCommentItem() {
   return (
     <div className={styles["container"]}>
       <Image src={replyEmptyImage} alt="댓글 없음" width={140} height={140} />
@@ -14,4 +14,4 @@ function NotCommentItem() {
   );
 }
 
-export default NotCommentItem;
+export default NoCommentItem;

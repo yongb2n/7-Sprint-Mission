@@ -1,7 +1,7 @@
 import Image from "next/image";
 import kebabIcon from "@/assets/icons/ic_kebab.svg";
 import profileImage from "@/assets/icons/ic_profile.svg";
-import styles from "./styles.module.scss";
+import styles from "@/pages/boards/[id]/components/CommentItem/styles.module.scss";
 import { Comment } from "@/services/articles";
 
 interface CommentProps {

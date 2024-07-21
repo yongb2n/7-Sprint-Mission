@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Dropdown from "./Dropdown";
-import styles from "./styles.module.scss";
+import styles from "@/pages/boards/components/AllArticle/styles.module.scss";
 import searchIcon from "@/assets/icons/ic_search.svg";
-import AllPost from "./AllPost";
+import AllPost from "./AllArticleItem";
 import { useEffect, useMemo, useState } from "react";
 import { getArticles, Article, ApiResponse } from "@/services/articles";
 import Link from "next/link";
