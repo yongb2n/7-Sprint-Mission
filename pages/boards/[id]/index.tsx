@@ -2,7 +2,7 @@ import Image from "next/image";
 import kebabIcon from "@/assets/icons/ic_kebab.svg";
 import profileImage from "@/assets/icons/ic_profile.svg";
 import likeIcon from "@/assets/icons/ic_heart.svg";
-import Comment from "./components/Comment";
+import Comment from "./components/CommentItem";
 import backIcon from "@/assets/icons/ic_back.svg";
 import NotComment from "./components/NotComment";
 import styles from "./styles.module.scss";
