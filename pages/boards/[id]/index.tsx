@@ -4,7 +4,7 @@ import profileImage from "@/assets/icons/ic_profile.svg";
 import likeIcon from "@/assets/icons/ic_heart.svg";
 import CommentItem from "./components/CommentItem";
 import backIcon from "@/assets/icons/ic_back.svg";
-import NoCommentItem from "./components/NoCommentItem";
+import NoComment from "./components/NoComment";
 import styles from "@/pages/boards/[id]/styles.module.scss";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useRouter } from "next/router";
@@ -113,7 +113,7 @@ function BoardsDetail() {
         <CommentItem key={comment.id} comment={comment} />
       ))}
 
-      {comments.length === 0 && <NoCommentItem />}
+      {comments.length === 0 && <NoComment />}
 
       <div className={styles["back-button-container"]}>
         <button
